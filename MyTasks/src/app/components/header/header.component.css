@@ -1,0 +1,21 @@
+.header{
+    width: 80%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.container{
+    background-color: #e91e63
+}
+.title, .name{
+    font-size: 1.2rem;
+    display: flex;
+    align-self: center;
+}
+.items {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}

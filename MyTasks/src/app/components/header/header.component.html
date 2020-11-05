@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="header">
+        <div class="title">{{title}}</div>
+        <div class="items">
+            <div class="name">{{nameUser}}</div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="logout" aria-label="Menu do Usuário">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+
+                <button mat-menu-item (click)="logoutUser()">
+                    <mat-icon>login</mat-icon>
+                    <span>Logout</span>
+                </button>
+
+                <button mat-menu-item routerLink="/user/infos">
+                    <mat-icon>info</mat-icon>
+                    <span>Informações</span>
+                </button>
+
+                <button mat-menu-item routerLink="/tasks">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Minhas tarefas</span>
+                </button>
+
+            </mat-menu>
+           </div> 
+    </div>
+</div>

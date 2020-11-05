@@ -1,0 +1,40 @@
+<div class="container add-task">
+  
+    <mat-form-field appearance="fill" >
+      <mat-label >Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" disabled>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" disabled/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>data</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" disabled/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Está finalizado?</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" disabled/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Importância</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" disabled/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
+    
+    <button mat-button (click)="delete()" class="button">Deletar</button>
+  </div>
+  

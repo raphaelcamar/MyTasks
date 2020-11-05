@@ -1,0 +1,11 @@
+<P>Update Tasks!</P>
+
+<form>
+    <input type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" required/>
+    <input type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" required/>
+    <input type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" required/>
+    <input type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" required/>
+    <input type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" required/>
+
+    <button (click)="updateTask()">Atualizar</button>
+</form>

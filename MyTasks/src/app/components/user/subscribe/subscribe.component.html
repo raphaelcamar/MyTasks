@@ -1,0 +1,33 @@
+<p>Cadastro</p>
+<form>
+    <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput type="name" [(ngModel)]="user.name" name="name" placeholder="Nome" required/>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-error>Erro</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+      <mat-label>CPF</mat-label>
+        <input matInput type="text" [(ngModel)]="user.cpf" name="cpf" placeholder="CPF" required/>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-error>Erro</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+        <input matInput type="email" [(ngModel)]="user.email" name="email" placeholder="e-mail" required/>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-error>Erro</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+        <input matInput type="password" [(ngModel)]="user.password" name="password" placeholder="Senha" required/>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-error>Erro</mat-error>
+      </mat-form-field>
+
+      <button mat-button (click)="subscribe()">Cadastrar</button>
+
+</form>

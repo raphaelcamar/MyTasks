@@ -1,0 +1,79 @@
+
+<app-header></app-header>
+<div class="container add-task">
+  
+<h1 class="tasks">Cadastre uma tarefa</h1>
+
+  <mat-form-field appearance="fill" >
+    <mat-label >Nome</mat-label>
+    <input matInput type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" required>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-error>Erro</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <input matInput type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" required/>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-error>Erro</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>data</mat-label>
+    <input matInput type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" required/>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-error>Erro</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Está finalizado?</mat-label>
+    <input matInput type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" required/>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-error>Erro</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Importância</mat-label>
+    <input matInput type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" required/>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-error>Erro</mat-error>
+  </mat-form-field>
+  
+  <button mat-button (click)="addTask()" class="button">Cadastrar</button>
+</div>
+
+<section>
+  <!--for demo wrap-->
+  <h1 class="tasks">Suas Tarefas!</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Data</th>
+          <th>Está finalizado?</th>
+          <th>Importância</th>
+          <th>Editar</th>
+          <th>Deletar</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr *ngFor="let tasks of allTasks">
+          <td>{{tasks.name}}</td>
+          <td>{{tasks.description}}</td>
+          <td>{{tasks.data}}</td>
+          <td>{{tasks.isFinished}}</td>
+          <td>{{tasks.importance}}</td>
+          <td><button mat-button routerLink="/update/{{ tasks.id }}">Editar</button></td>
+          <td><button mat-button routerLink="/delete/{{tasks.id}}">Deletar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<app-footer></app-footer>

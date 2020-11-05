@@ -1,0 +1,113 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Raphael Santantonio de Camargo",
+      "cpf": "427.004.328-86",
+      "email": "raphaelcamar@outlook.com",
+      "password": "12345678"
+    },
+    {
+      "name": "Raphael Santantonio  de Camargo",
+      "cpf": "4512154878787",
+      "email": "teste.raphael@gmail.com",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "name": "TesteNome",
+      "cpf": "427.445.654-89",
+      "email": "teste.redeaprendente@mailinator.com",
+      "password": "101010",
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "name": "raphael",
+      "cpf": "Santantonio",
+      "email": "raphaelcorinthgiahiadf@",
+      "password": "1231564",
+      "id": 10
+    },
+    {
+      "name": "Raphael Santantonio  de Camargo",
+      "cpf": "40114141414",
+      "email": "rapha@gmail.com",
+      "password": "1234567892",
+      "id": 11
+    }
+  ],
+  "tasks": [
+    {
+      "name": "Nao cara",
+      "description": "Teste",
+      "data": "14/03/1999",
+      "isFinished": "Não",
+      "importance": "Pouco",
+      "id": 4,
+      "idUser": 1
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "idUser": 1,
+      "name": "asd",
+      "description": "asdasd",
+      "data": "asdasd",
+      "isFinished": "asdasd",
+      "importance": "asdasd",
+      "id": 8
+    },
+    {
+      "idUser": 1,
+      "name": "asd",
+      "description": "asdasd",
+      "data": "asdasd",
+      "isFinished": "asdasd",
+      "importance": "asdasd",
+      "id": 9
+    },
+    {
+      "idUser": 1,
+      "name": "asd",
+      "description": "asdasd",
+      "data": "asdasd",
+      "isFinished": "asdasd",
+      "importance": "asdasd",
+      "id": 10
+    },
+    {
+      "idUser": 2,
+      "name": "Teste user 2",
+      "description": "Usr 2 teste",
+      "data": "12/12/12",
+      "isFinished": "Não",
+      "importance": "Pouca importância",
+      "id": 12
+    }
+  ]
+}
