@@ -22,6 +22,7 @@ import {MatMenuModule} from '@angular/material/menu'
 import {MatIconModule} from '@angular/material/icon'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { InfosComponent } from './components/user/infos/infos.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InfosComponent } from './components/user/infos/infos.component';
     LoginComponent,
     SubscribeComponent,
     LandingComponent,
-    InfosComponent
+    InfosComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,7 @@ import { InfosComponent } from './components/user/infos/infos.component';
     MatMenuModule,
     MatIconModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

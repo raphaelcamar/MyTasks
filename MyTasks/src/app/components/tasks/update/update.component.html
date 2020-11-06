@@ -1,11 +1,42 @@
-<P>Update Tasks!</P>
-
-<form>
-    <input type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" required/>
-    <input type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" required/>
-    <input type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" required/>
-    <input type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" required/>
-    <input type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" required/>
-
-    <button (click)="updateTask()">Atualizar</button>
-</form>
+<div class="container add-task">
+  
+    <mat-form-field appearance="fill" >
+      <mat-label >Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" >
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Nome não pode ser vazio</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" />
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Descrição não pode ser vazio</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>data</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" />
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Data não pode ser vazia</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Está finalizado?</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" />
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Não pode ser vazio</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Importância</mat-label>
+      <input matInput type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" />
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Importância não pode ser vazio</mat-error>
+    </mat-form-field>
+    
+    <mat-dialog-actions class="dialog">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button  cdkFocusInitial (click)="update()" mat-dialog-close>Atualizar</button>
+    </mat-dialog-actions>
+  </div>

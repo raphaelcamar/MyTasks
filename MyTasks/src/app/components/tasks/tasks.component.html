@@ -8,35 +8,35 @@
     <mat-label >Nome</mat-label>
     <input matInput type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" required>
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Erro</mat-error>
+    <mat-error>Nome não pode ser vazio</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Descrição</mat-label>
     <input matInput type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" required/>
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Erro</mat-error>
+    <mat-error>Descrição não pode ser vazio</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>data</mat-label>
     <input matInput type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" required/>
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Erro</mat-error>
+    <mat-error>Data não pode ser vazio</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Está finalizado?</mat-label>
     <input matInput type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" required/>
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Erro</mat-error>
+    <mat-error>Não pode ser vazio</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Importância</mat-label>
     <input matInput type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" required/>
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Erro</mat-error>
+    <mat-error>Descrição da importância não pode ser vazia</mat-error>
   </mat-form-field>
   
   <button mat-button (click)="addTask()" class="button">Cadastrar</button>
@@ -69,8 +69,8 @@
           <td>{{tasks.data}}</td>
           <td>{{tasks.isFinished}}</td>
           <td>{{tasks.importance}}</td>
-          <td><button mat-button routerLink="/update/{{ tasks.id }}">Editar</button></td>
-          <td><button mat-button routerLink="/delete/{{tasks.id}}">Deletar</button></td>
+          <td><button mat-button (click)="openDialogUpdate(tasks.id)">Editar</button></td>
+          <td><button mat-button (click)="openDialogDelete(tasks.id)">Deletar</button></td>
       </tr>
       </tbody>
     </table>

@@ -1,9 +1,9 @@
 <div class="container">
     <div class="header">
         <div class="title">{{title}}</div>
-        <div class="items">
+        <div class="items" *ngIf="logout">
             <div class="name">{{nameUser}}</div>
-            <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="logout" aria-label="Menu do Usuário">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu do Usuário">
                 <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">

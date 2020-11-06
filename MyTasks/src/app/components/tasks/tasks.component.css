@@ -6,8 +6,9 @@
 .add-task{
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
 }
-
 
 h1{
     font-size: 30px;

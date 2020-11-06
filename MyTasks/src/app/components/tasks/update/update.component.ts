@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
@@ -11,26 +12,27 @@ import { TasksService } from 'src/app/services/tasks/tasks.service';
 export class UpdateComponent implements OnInit {
 
   tasks : Tasks;
-  constructor(private route : ActivatedRoute, private router : Router, private taskService : TasksService) {
-    
+  constructor(private route : ActivatedRoute, 
+              private router : Router, 
+              private taskService : TasksService,
+              @Inject(MAT_DIALOG_DATA) private task : Tasks) {
+    this.tasks = this.task.task;
    }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const {id} = JSON.parse(localStorage.getItem('logged'));
     this.taskService.readById(id)
-      .subscribe(task =>{
-         this.tasks = task
-     });
-
+    .subscribe(resp =>{
+      this.tasks = resp
+    })
 
   }
 
-  updateTask():void{
-    console.log(this.tasks)
+  update():void{
      this.taskService.update(this.tasks)
      .subscribe(resp =>{
        console.log(resp)
-       this.router.navigate(['/tasks/'])
+       
      })
 
   }

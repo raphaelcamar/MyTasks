@@ -2,33 +2,36 @@
 
 <div class="infos">
 
-    <mat-form-field appearance="fill" >
-        <mat-label >Nome</mat-label>
-        <input matInput type="text" [(ngModel)]="user.name" name="name" placeholder="Nome" required>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <mat-error>Erro</mat-error>
-      </mat-form-field>
+  <div class="input-form">
+    <mat-form-field appearance="fill" class="input">
+      <mat-label >Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="user.name" name="name" placeholder="Nome" required>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
 
-      <mat-form-field appearance="fill" >
-        <mat-label >Email</mat-label>
-        <input matInput type="text" [(ngModel)]="user.email" name="email" placeholder="E-mail" required>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <mat-error>Erro</mat-error>
-      </mat-form-field>
+    <mat-form-field appearance="fill" class="input">
+      <mat-label >Email</mat-label>
+      <input matInput type="text" [(ngModel)]="user.email" name="email" placeholder="E-mail" required>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Erro</mat-error>
+    </mat-form-field>
+  </div>
 
-      <mat-form-field appearance="fill" >
+    <div class="input-form">
+      <mat-form-field appearance="fill" class="input">
         <mat-label >CPF</mat-label>
         <input matInput type="text" [(ngModel)]="user.cpf" name="cpf" placeholder="cpf" required>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error>Erro</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" >
+      <mat-form-field appearance="fill" class="input">
         <mat-label >Senha</mat-label>
         <input matInput type="password" [(ngModel)]="user.password" name="password" placeholder="password" required>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error>Erro</mat-error>
       </mat-form-field>
-    
+    </div>
       <button mat-button class="button" (click)="update()">Atualizar</button>
 </div>

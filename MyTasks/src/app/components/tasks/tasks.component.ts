@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
 import { User } from 'src/app/models/user.model';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
 import { changeName } from 'src/helpers/changeName';
 import { HeaderService } from '../header/header.service'
+import { DeleteComponent } from './delete/delete.component';
+import { UpdateComponent } from './update/update.component';
 
 @Component({
   selector: 'app-tasks',
@@ -17,7 +20,7 @@ export class TasksComponent implements OnInit {
   allTasks : Tasks[];
   user : User
 
-  constructor(private taskServie : TasksService, private route : ActivatedRoute, private headerService :  HeaderService) { 
+  constructor(private taskServie : TasksService, private route : ActivatedRoute, private headerService :  HeaderService, private dialog : MatDialog) { 
 
     this.user = JSON.parse(localStorage.getItem('logged'));
     
@@ -55,4 +58,33 @@ export class TasksComponent implements OnInit {
     });
   }
 
+  openDialogDelete(id : number):void{
+    
+    const task = this.allTasks.filter(task => task.id == id);
+
+    const dialogRef = this.dialog.open(DeleteComponent, {
+       data : {
+        task : task[0]
+       }
+     });
+     dialogRef.afterClosed().subscribe(result =>{
+
+     })
+  }
+
+  openDialogUpdate(id : number):void{
+    const task = this.allTasks.filter(task => task.id == id);
+
+    const dialogRef = this.dialog.open(UpdateComponent, {
+      data : {
+        task : task[0]
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result =>{
+
+      console.log('Colocar tipzinha de sucesso ou falha')
+    })
+
+  }
 }
