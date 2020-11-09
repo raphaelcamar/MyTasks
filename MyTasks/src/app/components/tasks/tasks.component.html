@@ -1,45 +1,47 @@
 
 <app-header></app-header>
-<div class="container add-task">
+<div >
   
 <h1 class="tasks">Cadastre uma tarefa</h1>
 
-  <mat-form-field appearance="fill" >
-    <mat-label >Nome</mat-label>
-    <input matInput type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" required>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Nome não pode ser vazio</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Descrição</mat-label>
-    <input matInput type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" required/>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Descrição não pode ser vazio</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>data</mat-label>
-    <input matInput type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" required/>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Data não pode ser vazio</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Está finalizado?</mat-label>
-    <input matInput type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" required/>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Não pode ser vazio</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Importância</mat-label>
-    <input matInput type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" required/>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-error>Descrição da importância não pode ser vazia</mat-error>
-  </mat-form-field>
+  <form class="container add-task" [formGroup]="formulary" (ngSubmit)="addTask()">
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label >Nome</mat-label>
+      <input matInput type="text" formControlName="name" name="name" placeholder="Nome" required>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Nome não pode ser vazio</mat-error>
+    </mat-form-field>
   
-  <button mat-button (click)="addTask()" class="button">Cadastrar</button>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Descrição</mat-label>
+      <input matInput type="text" formControlName="description" name="description" placeholder="Descrição" required/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Descrição não pode ser vazio</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>data</mat-label>
+      <input matInput type="text" formControlName="data" name="data" placeholder="Data" required/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Data não pode ser vazio</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Está finalizado?</mat-label>
+      <input matInput type="text" formControlName="isFinished" name="isFinished" placeholder="Está finalizada?" required/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Não pode ser vazio</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Importância</mat-label>
+      <input matInput type="text" formControlName="importance" name="importance" placeholder="Importância" required/>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-error>Descrição da importância não pode ser vazia</mat-error>
+    </mat-form-field>
+    
+    <button mat-button [disabled]="!formulary.valid" class="button">Cadastrar</button>
+  </form>
 </div>
 
 <section>

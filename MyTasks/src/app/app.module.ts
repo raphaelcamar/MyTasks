@@ -8,21 +8,22 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './components/tasks/update/update.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { DeleteComponent } from './components/tasks/delete/delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { SubscribeComponent } from './components/user/subscribe/subscribe.component';
 import { LandingComponent } from './components/landing/landing.component';
-import {MatMenuModule} from '@angular/material/menu'
-import {MatIconModule} from '@angular/material/icon'
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InfosComponent } from './components/user/infos/infos.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

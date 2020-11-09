@@ -1,19 +1,22 @@
-<p>Login</p>
-<form>
-
-    <mat-form-field appearance="fill">
+<div class="container">
+  <div class="form">
+    <mat-form-field appearance="fill" class="input">
         <mat-label>E-mail</mat-label>
         <input matInput type="email" [(ngModel)]="user.email" name="email" placeholder="e-mail" required/>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error>Erro</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="input">
         <mat-label>Senha</mat-label>
         <input matInput type="password" [(ngModel)]="user.password" name="password" placeholder="Senha" required/>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error>Erro</mat-error>
       </mat-form-field>
 
-    <button mat-button (click)="login()">Entrar</button>
-</form>
+    <div class="subscribe-login">
+      <button mat-button (click)="login()" class="button">Entrar</button>
+      <p>Não possui conta? <a routerLink="/subscribe">Cadastre-se</a>!</p>
+    </div>
+  </div>
+</div>

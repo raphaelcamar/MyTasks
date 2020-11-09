@@ -52,6 +52,19 @@
       "email": "rapha@gmail.com",
       "password": "1234567892",
       "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "name": "Raphael Carile Santos",
+      "cpf": "456.789.410-89",
+      "email": "raphael.carille@gmail.com",
+      "password": "12345678",
+      "id": 14
     }
   ],
   "tasks": [
@@ -72,24 +85,6 @@
       "isFinished": "Não",
       "importance": "Pouca importância",
       "id": 12
-    },
-    {
-      "idUser": 1,
-      "name": "ASDASDASD",
-      "description": "Teste de tarefa",
-      "data": "14/03/1999",
-      "isFinished": "Não",
-      "importance": "Nadaadasd",
-      "id": 13
-    },
-    {
-      "idUser": 1,
-      "name": "Teste de Tarefas",
-      "description": "Teste de tarefa",
-      "data": "14/03/1999",
-      "isFinished": "Não",
-      "importance": "Nada",
-      "id": 14
     },
     {
       "idUser": 1,
@@ -117,6 +112,15 @@
       "isFinished": "Não",
       "importance": "Nada",
       "id": 17
+    },
+    {
+      "name": "Teste de tarefa",
+      "description": "Teste",
+      "data": "14/03/2020",
+      "isFinished": "Não está",
+      "importance": "Pouco importante",
+      "idUser": 14,
+      "id": 18
     }
   ]
 }

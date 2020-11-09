@@ -12,11 +12,12 @@ import { TasksService } from 'src/app/services/tasks/tasks.service';
 export class UpdateComponent implements OnInit {
 
   tasks : Tasks;
-  constructor(private route : ActivatedRoute, 
-              private router : Router, 
-              private taskService : TasksService,
-              @Inject(MAT_DIALOG_DATA) private task : Tasks) {
-    this.tasks = this.task.task;
+  constructor(
+    private route : ActivatedRoute, 
+    private router : Router, 
+    private taskService : TasksService,
+    @Inject(MAT_DIALOG_DATA) private task : Tasks){
+      this.tasks = this.task.task;
    }
 
   ngOnInit(): void {
@@ -31,10 +32,9 @@ export class UpdateComponent implements OnInit {
   update():void{
      this.taskService.update(this.tasks)
      .subscribe(resp =>{
-       console.log(resp)
+      this.taskService.message('Tarefa editada com sucesso!')
+      console.log(resp)
        
-     })
-
+     });
   }
-
 }

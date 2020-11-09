@@ -13,7 +13,8 @@ const routes: Routes = [
   {path : 'tasks', component : TasksComponent},
   {path : 'update/:id', component :  UpdateComponent},
   {path : 'delete/:id', component : DeleteComponent},
-  {path : 'user/infos', component : InfosComponent}
+  {path : 'user/infos', component : InfosComponent},
+  {path : 'subscribe', component : SubscribeComponent}
 ];
 
 @NgModule({

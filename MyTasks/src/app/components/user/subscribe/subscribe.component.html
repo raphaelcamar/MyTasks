@@ -1,33 +1,37 @@
-<p>Cadastro</p>
-<form>
-    <mat-form-field appearance="fill">
-        <mat-label>Nome</mat-label>
-        <input matInput type="name" [(ngModel)]="user.name" name="name" placeholder="Nome" required/>
+<p class="title">Cadastro no Mytasks</p>
+<div class="container" >
+<form [formGroup]="formulary" (ngSubmit)="subscribe()">
+    <mat-form-field appearance="fill" color="accent">
+        <mat-label>Nome completo</mat-label>
+        <input matInput type="name" formControlName="name" name="name" placeholder="Nome"/>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <mat-error>Erro</mat-error>
+        <mat-error *ngIf="name.errors">Nome completo deverá ser válido</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" color="accent">
       <mat-label>CPF</mat-label>
-        <input matInput type="text" [(ngModel)]="user.cpf" name="cpf" placeholder="CPF" required/>
+        <input matInput type="text" formControlName="cpf" name="cpf" placeholder="CPF"/>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <mat-error>Erro</mat-error>
+        <mat-error *ngIf="cpf.errors">Digite um CPF válido!</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" color="accent">
       <mat-label>E-mail</mat-label>
-        <input matInput type="email" [(ngModel)]="user.email" name="email" placeholder="e-mail" required/>
+        <input matInput type="email" formControlName="email" name="email" placeholder="e-mail"/>
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <mat-error>Erro</mat-error>
+        <mat-error *ngIf="email.errors">O E-mail deverá ser válido</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" color="accent">
       <mat-label>Senha</mat-label>
-        <input matInput type="password" [(ngModel)]="user.password" name="password" placeholder="Senha" required/>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <mat-error>Erro</mat-error>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" name="password" placeholder="Senha"/>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        <mat-error *ngIf="password.errors">Senha deverá ser válida, com o mínimo de 7 caracteres</mat-error>
       </mat-form-field>
 
-      <button mat-button (click)="subscribe()">Cadastrar</button>
-
+      <button mat-button [disabled]="!formulary.valid" class="button">Cadastrar</button>
 </form>
+
+</div>

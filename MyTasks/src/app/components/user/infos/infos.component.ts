@@ -22,7 +22,7 @@ export class InfosComponent implements OnInit {
       title : 'Suas Informações!',
       isLogged : true,
       logout : true,
-      nameUser : changeName(this.user.name),
+      nameUser : changeName.firstName(this.user.name),
       routeUrl : ''
     }
    }

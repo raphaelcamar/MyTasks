@@ -32,7 +32,7 @@ export class DeleteComponent implements OnInit {
   delete():void{
     this.taskService.delete(this.tasks.id)
       .subscribe(resp =>{
-        
+        this.taskService.message('Tarefa deletada com sucesso!')
     })
   }
 }
