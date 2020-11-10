@@ -18,7 +18,7 @@ export class DeleteComponent implements OnInit {
               private router : Router, 
               private taskService : TasksService, 
               @Inject(MAT_DIALOG_DATA) private task : Tasks){
-                this.tasks = this.task.task
+                this.tasks = this.task
    }
    
   ngOnInit(): void {

@@ -22,6 +22,7 @@ export class TasksComponent implements OnInit {
   allTasks : Tasks[];
   user : User;
   formulary : FormGroup;
+  dateTime = new Date();
 
   constructor(private taskService : TasksService, private route : ActivatedRoute, private headerService :  HeaderService, private dialog : MatDialog, private fb : FormBuilder) { 
 
@@ -49,34 +50,31 @@ export class TasksComponent implements OnInit {
   .subscribe(resp =>{
     this.allTasks = resp;
     });
-    console.log(this.tasks)
 
     this.formValidation();
   }
 
   addTask(){
-
     const id = this.tasks.idUser;
     this.tasks = this.formulary.value
     this.tasks.idUser = id;
-    console.log(this.tasks)
+    console.log(this.tasks);
 
      this.taskService.create(this.tasks)
      .subscribe(resp =>{
-       this.ngOnInit();
-  
+      this.taskService.message('Tarefa Adicionada com sucesso!')
+      this.ngOnInit();
+
      });
   }
 
   openDialogDelete(id : number):void{
     
     const task = this.allTasks.filter(task => task.id == id);
-
     const dialogRef = this.dialog.open(DeleteComponent, {
-       data : {
-        task : task[0]
-       }
-     });
+       data : task[0]
+     }
+     );
      dialogRef.afterClosed().subscribe(result =>{
         this.ngOnInit();
      })
@@ -86,9 +84,7 @@ export class TasksComponent implements OnInit {
     const task = this.allTasks.filter(task => task.id == id);
 
     const dialogRef = this.dialog.open(UpdateComponent, {
-      data : {
-        task : task[0]
-      }
+      data : task[0]
     });
 
     dialogRef.afterClosed().subscribe(result =>{
