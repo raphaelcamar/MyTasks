@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,7 +55,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     MatDialogModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide : LOCALE_ID, useValue : 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

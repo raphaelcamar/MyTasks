@@ -40,7 +40,8 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {
   this.user = JSON.parse(localStorage.getItem('logged'));
-  const {id} = this.user
+
+  const {id} = this.user;
 
   this.tasks = new Tasks();
   

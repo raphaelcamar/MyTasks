@@ -9,7 +9,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { SubscribeComponent } from './components/user/subscribe/subscribe.component';
 
 const routes: Routes = [
-  {path:'', component : LandingComponent},
+  {path : '', component : LandingComponent},
   {path : 'tasks', component : TasksComponent},
   {path : 'update/:id', component :  UpdateComponent},
   {path : 'delete/:id', component : DeleteComponent},
