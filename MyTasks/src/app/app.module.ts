@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeBr from '@angular/common/locales/pt';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +27,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InfosComponent } from './components/user/infos/infos.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from "@angular/forms";
+import { AdmComponent } from './components/adm/adm.component';
+import { AuthGuardService } from './guards/auth-guard.service';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CardComponent } from './components/card/card.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
+import { MonthTasksComponent } from './components/month-tasks/month-tasks.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -37,7 +49,9 @@ import { ReactiveFormsModule } from "@angular/forms";
     SubscribeComponent,
     LandingComponent,
     InfosComponent,
-    
+    AdmComponent,
+    CardComponent,
+    MonthTasksComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,9 +67,17 @@ import { ReactiveFormsModule } from "@angular/forms";
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    MatSelectModule,
   ],
-  providers: [{ provide : LOCALE_ID, useValue : 'pt-BR'}],
+  providers: [
+    // { provide : LOCALE_ID, useValue : 'pt-BR'},
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

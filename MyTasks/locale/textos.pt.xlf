@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="pt-BR" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="058c3aad2312b2e45d0c0a12f6d397a7ce0b10f1" datatype="html">
         <source>Cadastre uma tarefa</source>

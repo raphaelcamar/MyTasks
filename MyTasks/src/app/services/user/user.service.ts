@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 
@@ -8,15 +9,21 @@ import { User } from 'src/app/models/user.model';
 })
 export class UserService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private snackBar : MatSnackBar) { }
+
+  message(msg : string):void{
+    this.snackBar.open(msg, 'Fechar', {
+      duration : 3000,
+      horizontalPosition : 'right',
+      verticalPosition : 'top'
+    })
+  }
 
   create(user: User):Observable<User>{
     return this.http.post<User>(`http://localhost:3001/users`, user)
-
   }
 
   read(id : number):Observable<User>{
-    
     return this.http.get<User>(`http://localhost:3001/users/${id}`)
   }
 

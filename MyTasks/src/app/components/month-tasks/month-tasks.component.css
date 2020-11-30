@@ -1,0 +1,45 @@
+.container{
+    width: 80%;
+    margin : 0 auto;
+}
+.title{
+    text-align: center;
+    font-size: 25px;
+    font-size: 2vw;
+    margin: 5% 0 ;
+}
+.wrapper-card{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    color: white;
+    height: 20vh;
+    width: 30%;
+}
+.finished{
+    background-color: #33C58B;
+}
+.progress{
+    background: #3F51B5;
+}
+.canceled{
+    background: #EF4E59;
+}
+.container-card{
+    margin : 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height : 25vh;
+}
+.count{
+    margin-bottom : 10%;
+}
+.count{
+    font-size: 35px;
+    font-size: 6vw;
+    font-weight: 300; 
+    text-align: center;
+}

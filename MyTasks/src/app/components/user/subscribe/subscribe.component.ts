@@ -27,16 +27,14 @@ export class SubscribeComponent implements OnInit {
   subscribe(){
     this.user = this.formulary.value
     this.user.name = changeName.upperCaseName(this.formulary.value.name);
-    //console.log(this.user)    
 
        this.userService.create(this.user)
        .subscribe(resp =>{
+        console.log(resp)
         localStorage.clear();
         this.router.navigate(['/tasks']);
         localStorage.setItem('logged', JSON.stringify(resp));
-       })
-
-   
+       })   
   }
 
   formvalidation(){
@@ -50,10 +48,13 @@ export class SubscribeComponent implements OnInit {
         email : ['',Validators.compose([
           Validators.required,
           Validators.email])],
-        password : [ '',Validators.compose([
+        password : ['',Validators.compose([
           Validators.required,
           Validators.minLength(7),
-          Validators.maxLength(15)])]
+          Validators.maxLength(15)])],
+        isAdm : [true, Validators.compose([
+          Validators.required,
+        ])]
       }
     )
   }
@@ -74,6 +75,10 @@ export class SubscribeComponent implements OnInit {
 
   get password(){
     return this.formulary.get('password')
+  }
+
+  get isAdm(){
+    return this.formulary.get('isAdm')
   }
 
 }

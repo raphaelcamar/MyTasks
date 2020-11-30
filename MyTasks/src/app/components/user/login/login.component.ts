@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
 export class LoginComponent implements OnInit {
 
   user : User;
+  hide : boolean = true
 
   constructor(private userService : UserService, private router : Router) { }
 
@@ -28,12 +29,10 @@ export class LoginComponent implements OnInit {
       this.userService.login(this.user.email, this.user.password)
         .subscribe(resp =>{
           
-          console.log(resp)
            if(!resp[0]){
              console.log('Usuário não encontrado')
            }else{
              localStorage.setItem('logged', JSON.stringify(resp[0]));
-             console.log('resposta', resp[0])
              this.router.navigate(['/tasks'])
            }   
       })

@@ -2,13 +2,14 @@
     display: flex;
     align-items: center;
     font-size: 15px;
-    font-weight: bold;
     color: white;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 5%;
 }
 .container{
-    background-color: #e91e63
+    background-color: #3F51B5;
+
 }

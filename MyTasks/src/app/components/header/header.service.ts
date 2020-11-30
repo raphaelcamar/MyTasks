@@ -14,7 +14,7 @@ export class HeaderService {
     routeUrl : '',
     isLogged : false,
     logout : true,
-
+    isAdm : false
   })
 
   constructor() {}

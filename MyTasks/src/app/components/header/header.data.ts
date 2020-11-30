@@ -3,5 +3,6 @@ export interface HeaderData{
     routeUrl : string;
     isLogged : boolean;
     logout : boolean;
-    nameUser : string
+    nameUser : string;
+    isAdm : boolean;
 }

@@ -30,6 +30,15 @@
           </button>
         <mat-error *ngIf="password.errors">Senha deverá ser válida, com o mínimo de 7 caracteres</mat-error>
       </mat-form-field>
+      
+      <section class="example-section">
+        <mat-slide-toggle
+            [checked]="isAdm"
+            formControlName="isAdm"
+            >
+            É adminstrador?
+        </mat-slide-toggle>
+      </section>
 
       <button mat-button [disabled]="!formulary.valid" class="button">Cadastrar</button>
 </form>

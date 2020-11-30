@@ -6,4 +6,5 @@ export class User {
     cpf : string;
     email : string;
     password : string;
+    isAdm : boolean = false;
 }

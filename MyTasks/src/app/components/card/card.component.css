@@ -1,0 +1,35 @@
+.container{
+    width: 80%;
+    margin : 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.card{
+    width: 26%;
+    /* border: 1px solid rgb(189, 188, 188); */
+    border-radius: 9px;
+    margin : 3% 0;
+    background: white;
+    box-shadow: 0px 3px 8px rgb(197, 197, 197);
+}   
+img{
+    width: 100%;
+    border-radius: 9px 9px 0 0 ;
+}
+.infos{
+    width: 95%;
+    margin : 0 auto;
+}
+.wrapper-infos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+button{
+    background-color : #33c58b;
+    color: rgb(245, 245, 245);
+}

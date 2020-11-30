@@ -8,11 +8,6 @@
             </button>
             <mat-menu #menu="matMenu">
 
-                <button mat-menu-item (click)="logoutUser()">
-                    <mat-icon>login</mat-icon>
-                    <span>Logout</span>
-                </button>
-
                 <button mat-menu-item routerLink="/user/infos">
                     <mat-icon>info</mat-icon>
                     <span>Informações</span>
@@ -21,6 +16,16 @@
                 <button mat-menu-item routerLink="/tasks">
                     <mat-icon>library_books</mat-icon>
                     <span>Minhas tarefas</span>
+                </button>
+
+                <button *ngIf="adm" mat-menu-item routerLink="/users/data">
+                    <mat-icon>dashboard</mat-icon>
+                    <span>Dados do Aplicativos</span>
+                </button>
+
+                <button mat-menu-item (click)="logoutUser()">
+                    <mat-icon>login</mat-icon>
+                    <span>Logout</span>
                 </button>
 
             </mat-menu>

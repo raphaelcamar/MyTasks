@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="title">Tarefas do mês de {{month}}</div>
+
+   <div class="wrapper-card">
+
+        <div class="card finished">
+            <div class="container-card">
+                <div class="count">{{finishedTasks}}</div>
+                <p>Tarefas finalizadas</p>
+            </div>
+        </div>
+
+        <div class="card canceled">
+            <div class="container-card">
+                <div class="count">{{canceledTasks}}</div>
+                <p>Tarefas Canceladas</p>
+            </div>
+        </div>
+
+        <div class="card progress">
+            <div class="container-card">
+                <div class="count">{{progressTasks}}</div>
+                <p>Tarefas Em andamento</p>
+            </div>
+        </div>
+    </div>
+</div>

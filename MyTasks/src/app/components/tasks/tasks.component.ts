@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
 import { User } from 'src/app/models/user.model';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
+import { changeDate } from 'src/helpers/changeDate';
 import { changeName } from 'src/helpers/changeName';
 import { validations } from 'src/helpers/validation';
 import { HeaderService } from '../header/header.service'
@@ -18,23 +19,25 @@ import { UpdateComponent } from './update/update.component';
 })
 export class TasksComponent implements OnInit {
 
+  displayedColumns: string[];
   tasks : Tasks;
   allTasks : Tasks[];
   user : User;
   formulary : FormGroup;
   dateTime = new Date();
+  dataSource : Tasks[]
 
-  constructor(private taskService : TasksService, private route : ActivatedRoute, private headerService :  HeaderService, private dialog : MatDialog, private fb : FormBuilder) { 
+  constructor(private taskService : TasksService, private headerService :  HeaderService, private dialog : MatDialog, private fb : FormBuilder) { 
 
     this.user = JSON.parse(localStorage.getItem('logged'));
     
-    
-    headerService.headerData = {
+    this.headerService.headerData = {
       title : 'Suas Tarefas!',
       isLogged : true,
       logout : true,
       nameUser : changeName.firstName(this.user.name),
-      routeUrl : ''
+      routeUrl : '',
+      isAdm : this.user.isAdm
     }
   }
 
@@ -47,9 +50,13 @@ export class TasksComponent implements OnInit {
   
   this.tasks.idUser = id;
 
+  //MUDAR A LOGICA E COLOCAR ISSO EM UM COMPONENT
   this.taskService.read(id)
   .subscribe(resp =>{
-    this.allTasks = resp;
+    this.dataSource = resp
+    console.log(resp[0].data)
+    this.allTasks = resp
+    this.displayedColumns = ['name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
     });
 
     this.formValidation();
@@ -57,16 +64,14 @@ export class TasksComponent implements OnInit {
 
   addTask(){
     const id = this.tasks.idUser;
-    this.tasks = this.formulary.value
+    this.tasks = this.formulary.value;
+    console.log(this.tasks.data)
     this.tasks.idUser = id;
-    console.log(this.tasks);
-
-     this.taskService.create(this.tasks)
-     .subscribe(resp =>{
-      this.taskService.message('Tarefa Adicionada com sucesso!')
-      this.ngOnInit();
-
-     });
+    this.taskService.create(this.tasks)
+      .subscribe(resp =>{
+    this.taskService.message('Tarefa Adicionada com sucesso!')
+    this.ngOnInit();
+    });
   }
 
   openDialogDelete(id : number):void{
@@ -74,11 +79,11 @@ export class TasksComponent implements OnInit {
     const task = this.allTasks.filter(task => task.id == id);
     const dialogRef = this.dialog.open(DeleteComponent, {
        data : task[0]
-     }
+    }
      );
-     dialogRef.afterClosed().subscribe(result =>{
-        this.ngOnInit();
-     })
+    dialogRef.afterClosed().subscribe(result =>{
+      this.ngOnInit();
+    })
   }
 
   openDialogUpdate(id : number):void{
@@ -87,11 +92,9 @@ export class TasksComponent implements OnInit {
     const dialogRef = this.dialog.open(UpdateComponent, {
       data : task[0]
     });
-
     dialogRef.afterClosed().subscribe(result =>{
       this.ngOnInit();
     })
-
   }
 
   formValidation(){

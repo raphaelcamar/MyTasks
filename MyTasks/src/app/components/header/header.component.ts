@@ -35,10 +35,12 @@ export class HeaderComponent implements OnInit {
    return this.headerService.headerData.logout
   }
 
+  get adm():boolean{
+    return this.headerService.headerData.isAdm
+  }
+
   logoutUser():void{
-    console.log('Entrou aqui')
     localStorage.clear();
     this.router.navigate(['/'])
   }
-
 }
