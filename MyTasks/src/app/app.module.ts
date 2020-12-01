@@ -36,6 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import { MonthTasksComponent } from './components/month-tasks/month-tasks.component';
 import {MatSelectModule} from '@angular/material/select';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import {MatSelectModule} from '@angular/material/select';
     AdmComponent,
     CardComponent,
     MonthTasksComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

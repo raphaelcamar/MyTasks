@@ -22,23 +22,23 @@ export class TasksService {
   }
 
   create(tasks : Tasks): Observable<Tasks>{
-    return this.http.post<Tasks>(`http://localhost:3001/tasks`, tasks);
+    return this.http.post<Tasks>(`https://backend-mytasks.herokuapp.com/tasks`, tasks);
   }
 
   read( id : number ):Observable<Tasks[]>{
-    return this.http.get<Tasks[]>(`http://localhost:3001/tasks?idUser=${id}`);
+    return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks?idUser=${id}`);
   }
 
   readById(id : number):Observable<Tasks>{
-    return this.http.get<Tasks>(`http://localhost:3001/tasks/${id}`);
+    return this.http.get<Tasks>(`https://backend-mytasks.herokuapp.com/tasks/${id}`);
   }
 
   update(tasks : Tasks):Observable<Tasks>{
     const id =  tasks.id;
-    return this.http.put<Tasks>(`http://localhost:3001/tasks/${id}`, tasks);
+    return this.http.put<Tasks>(`https://backend-mytasks.herokuapp.com/tasks/${id}`, tasks);
   }
 
   delete(id : number):Observable<Tasks>{
-    return this.http.delete<Tasks>(`http://localhost:3001/tasks/${id}`);
+    return this.http.delete<Tasks>(`https://backend-mytasks.herokuapp.com/tasks/${id}`);
   }
 }

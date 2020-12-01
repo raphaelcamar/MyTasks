@@ -19,12 +19,12 @@ import { UpdateComponent } from './update/update.component';
 })
 export class TasksComponent implements OnInit {
 
-  displayedColumns: string[];
   tasks : Tasks;
   allTasks : Tasks[];
   user : User;
   formulary : FormGroup;
   dateTime = new Date();
+  displayedColumns: string[];
   dataSource : Tasks[]
 
   constructor(private taskService : TasksService, private headerService :  HeaderService, private dialog : MatDialog, private fb : FormBuilder) { 
@@ -65,7 +65,6 @@ export class TasksComponent implements OnInit {
   addTask(){
     const id = this.tasks.idUser;
     this.tasks = this.formulary.value;
-    console.log(this.tasks.data)
     this.tasks.idUser = id;
     this.taskService.create(this.tasks)
       .subscribe(resp =>{

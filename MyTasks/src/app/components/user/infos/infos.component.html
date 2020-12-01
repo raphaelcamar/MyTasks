@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<form class="infos" [formGroup]="formulary" (ngSubmit)="update()">
+<form class="infos" [formGroup]="formulary">
 
   <div class="input-form">
     <mat-form-field appearance="fill" class="input">
@@ -47,7 +47,7 @@
         </mat-slide-toggle>
       </section>
       
-      <button mat-raised-button color="primary" class="button" >Atualizar</button>  
+      <button mat-raised-button color="primary" class="button" (click)="update()">Atualizar</button>  
     </div>
   </form>
 

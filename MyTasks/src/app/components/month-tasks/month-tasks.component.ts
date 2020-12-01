@@ -15,6 +15,8 @@ export class MonthTasksComponent implements OnInit {
   finishedTasks : number = 0;
   progressTasks : number = 0;
   canceledTasks : number = 0;
+  displayedColumns: string[];
+  dataSource : Tasks[]
 
   constructor(private headerService : HeaderService) { 
     this.headerService.headerData = {
@@ -31,9 +33,11 @@ export class MonthTasksComponent implements OnInit {
     const {month, tasks} = history.state.data
     this.month = changeDate.ReturningNameMonthByNumber(month);
     this.tasks = tasks
-
+    this.dataSource = tasks
+    this.displayedColumns = ['status','name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
+    console.log(this.tasks)
     this.tasks.forEach(item =>{
-      console.log(item.isFinished)
+      
       if(item.isFinished == 'Finalizado'){
         this.finishedTasks += 1;
       }

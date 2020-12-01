@@ -20,22 +20,22 @@ export class UserService {
   }
 
   create(user: User):Observable<User>{
-    return this.http.post<User>(`http://localhost:3001/users`, user)
+    return this.http.post<User>(`https://backend-mytasks.herokuapp.com/users`, user)
   }
 
   read(id : number):Observable<User>{
-    return this.http.get<User>(`http://localhost:3001/users/${id}`)
+    return this.http.get<User>(`https://backend-mytasks.herokuapp.com/users/${id}`)
   }
 
   login(email : string, password : string):Observable<User>{
-    return this.http.get<User>(`http://localhost:3001/users?email=${email}&password=${password}`)
+    return this.http.get<User>(`https://backend-mytasks.herokuapp.com/users?email=${email}&password=${password}`)
   }
 
   update(user : User):Observable<User>{
-    return this.http.put<User>(`http://localhost:3001/users/${user.id}`, user)
+    return this.http.put<User>(`https://backend-mytasks.herokuapp.com/users/${user.id}`, user)
   }
 
   delete(id : number):Observable<User>{
-    return this.http.delete<User>(`http://localhost:3001/users/${id}`)
+    return this.http.delete<User>(`https://backend-mytasks.herokuapp.com/users/${id}`)
   }
 }
