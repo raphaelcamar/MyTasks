@@ -14,29 +14,37 @@
       <mat-error>Descrição não pode ser vazio</mat-error>
     </mat-form-field>
   
-    <mat-form-field appearance="fill">
-      <mat-label>data</mat-label>
-      <input matInput type="text" [(ngModel)]="tasks.data" name="data" placeholder="Data" />
-      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-      <mat-error>Data não pode ser vazia</mat-error>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Selecione a data</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="tasks.data" required>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 color="primary"></mat-datepicker>
+      <mat-error >A data tem que ser válida</mat-error>
     </mat-form-field>
   
     <mat-form-field appearance="fill">
-      <mat-label>Está finalizado?</mat-label>
-      <input matInput type="text" [(ngModel)]="tasks.isFinished" name="isFinished" placeholder="Está finalizada?" />
-      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-      <mat-error>Não pode ser vazio</mat-error>
+      <mat-label>Processo</mat-label>
+      <mat-select [(ngModel)]="tasks.isFinished">
+        <mat-option value="Não iniciado" selected>Não iniciado</mat-option>
+        <mat-option value="Finalizado">Finalizado</mat-option>
+        <mat-option value="Em processo">Em processo</mat-option>
+        <mat-option value="Cancelado">Cancelado</mat-option>
+      </mat-select>
+      <mat-error>Não pode ser vazio!</mat-error>
     </mat-form-field>
   
     <mat-form-field appearance="fill">
       <mat-label>Importância</mat-label>
-      <input matInput type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" />
-      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-      <mat-error>Importância não pode ser vazio</mat-error>
+      <mat-select [(ngModel)]="tasks.importance">
+        <mat-option value="Sem importancia" >Sem muita importância</mat-option>
+        <mat-option value="Importante" selected>Importante</mat-option>
+        <mat-option value="Urgente">Urgente</mat-option>
+      </mat-select>
+      <mat-error>Não pode ser vazio!</mat-error>
     </mat-form-field>
     
     <mat-dialog-actions class="dialog">
       <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button  cdkFocusInitial (click)="update()" mat-dialog-close>Atualizar</button>
+      <button mat-button  cdkFocusInitial (click)="update()" [mat-dialog-close]="tasks">Atualizar</button>
     </mat-dialog-actions>
   </div>

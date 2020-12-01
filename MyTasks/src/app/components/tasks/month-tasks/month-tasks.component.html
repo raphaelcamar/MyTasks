@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="title">Tarefas do mês de {{month}}</div>
+
+   <div class="wrapper-card">
+
+        <div class="card finished">
+            <div class="container-card">
+                <div class="count">{{finishedTasks}}</div>
+                <p>Tarefas finalizadas</p>
+            </div>
+        </div>
+
+        <div class="card canceled">
+            <div class="container-card">
+                <div class="count">{{canceledTasks}}</div>
+                <p>Tarefas Canceladas</p>
+            </div>
+        </div>
+
+        <div class="card progress">
+            <div class="container-card">
+                <div class="count">{{progressTasks}}</div>
+                <p>Tarefas Em andamento</p>
+            </div>
+        </div>
+    </div>
+
+    <app-table></app-table>
+  
+    <app-add-task></app-add-task>
+</div>
+
+<!-- <ng-container matColumnDef="status">
+  <th mat-header-cell *matHeaderCellDef> Status </th>
+  <td mat-cell *matCellDef="let task">
+    <span *ngIf="task.isFinished == 'Finalizado'" class="finished"></span>
+    <span *ngIf="task.isFinished == 'Cancelado'" class="canceled"></span>
+    <span *ngIf="task.isFinished == 'Em processo'" class="progress"></span>
+    <span *ngIf="task.isFinished == 'Não iniciado'" class="not-started"></span>
+  </td>
+</ng-container> -->
+
+<!-- <app-footer></app-footer> -->

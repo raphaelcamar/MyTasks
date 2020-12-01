@@ -29,7 +29,7 @@ export class CardComponent implements OnInit {
 
     setTimeout(()=>{
       this.getValuesAndSeparateByMonth();
-    }, 2000)
+    }, 1000 )
   }
 
   getValuesAndSeparateByMonth(){

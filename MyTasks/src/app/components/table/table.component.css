@@ -1,0 +1,20 @@
+
+tr,td,th{
+    text-align: center !important;
+}
+table{
+    width:100%;
+    table-layout: fixed;
+    margin-top: 5%;
+}
+th{
+    padding: 20px 15px;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.edit{
+    color: #33c58b;
+}
+  

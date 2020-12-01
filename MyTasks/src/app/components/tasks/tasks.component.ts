@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
 import { User } from 'src/app/models/user.model';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
-import { changeDate } from 'src/helpers/changeDate';
 import { changeName } from 'src/helpers/changeName';
 import { validations } from 'src/helpers/validation';
 import { HeaderService } from '../header/header.service'
-import { DeleteComponent } from './delete/delete.component';
-import { UpdateComponent } from './update/update.component';
+import { TableService } from '../table/table.service';
 
 @Component({
   selector: 'app-tasks',
@@ -27,7 +23,7 @@ export class TasksComponent implements OnInit {
   displayedColumns: string[];
   dataSource : Tasks[]
 
-  constructor(private taskService : TasksService, private headerService :  HeaderService, private dialog : MatDialog, private fb : FormBuilder) { 
+  constructor(private taskService : TasksService, private headerService :  HeaderService, private fb : FormBuilder, private tableService : TableService) { 
 
     this.user = JSON.parse(localStorage.getItem('logged'));
     
@@ -54,6 +50,8 @@ export class TasksComponent implements OnInit {
   this.taskService.read(id)
   .subscribe(resp =>{
     this.dataSource = resp
+    this.tableService.TableData = resp
+
     console.log(resp[0].data)
     this.allTasks = resp
     this.displayedColumns = ['name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
@@ -68,32 +66,8 @@ export class TasksComponent implements OnInit {
     this.tasks.idUser = id;
     this.taskService.create(this.tasks)
       .subscribe(resp =>{
-    this.taskService.message('Tarefa Adicionada com sucesso!')
-    this.ngOnInit();
+        this.taskService.message('Tarefa Adicionada com sucesso!')
     });
-  }
-
-  openDialogDelete(id : number):void{
-    
-    const task = this.allTasks.filter(task => task.id == id);
-    const dialogRef = this.dialog.open(DeleteComponent, {
-       data : task[0]
-    }
-     );
-    dialogRef.afterClosed().subscribe(result =>{
-      this.ngOnInit();
-    })
-  }
-
-  openDialogUpdate(id : number):void{
-    const task = this.allTasks.filter(task => task.id == id);
-
-    const dialogRef = this.dialog.open(UpdateComponent, {
-      data : task[0]
-    });
-    dialogRef.afterClosed().subscribe(result =>{
-      this.ngOnInit();
-    })
   }
 
   formValidation(){

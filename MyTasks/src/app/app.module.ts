@@ -34,9 +34,11 @@ import { CardComponent } from './components/card/card.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
-import { MonthTasksComponent } from './components/month-tasks/month-tasks.component';
 import {MatSelectModule} from '@angular/material/select';
 import { TableComponent } from './components/table/table.component';
+import { MonthTasksComponent } from './components/tasks/month-tasks/month-tasks.component';
+import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { TableComponent } from './components/table/table.component';
     CardComponent,
     MonthTasksComponent,
     TableComponent,
+    AddTaskComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ import { TableComponent } from './components/table/table.component';
     MatNativeDateModule,
     MatCardModule,
     MatSelectModule,
+    MatTooltipModule,
   ],
   providers: [
     // { provide : LOCALE_ID, useValue : 'pt-BR'},

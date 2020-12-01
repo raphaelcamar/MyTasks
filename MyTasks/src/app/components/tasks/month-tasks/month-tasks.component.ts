@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Tasks } from 'src/app/models/tasks.model';
 import { changeDate } from 'src/helpers/changeDate';
-import { HeaderService } from '../header/header.service';
+import { HeaderService } from '../../header/header.service';
+import { TableService } from '../../table/table.service';
 
 @Component({
   selector: 'app-month-tasks',
@@ -18,7 +19,7 @@ export class MonthTasksComponent implements OnInit {
   displayedColumns: string[];
   dataSource : Tasks[]
 
-  constructor(private headerService : HeaderService) { 
+  constructor(private headerService : HeaderService, private tableService : TableService) { 
     this.headerService.headerData = {
       isAdm : true,
       isLogged : true,
@@ -29,12 +30,13 @@ export class MonthTasksComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    console.log(history.state.data)
     const {month, tasks} = history.state.data
     this.month = changeDate.ReturningNameMonthByNumber(month);
     this.tasks = tasks
     this.dataSource = tasks
-    this.displayedColumns = ['status','name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
+
+    this.tableService.TableData = this.tasks
+
     console.log(this.tasks)
     this.tasks.forEach(item =>{
       

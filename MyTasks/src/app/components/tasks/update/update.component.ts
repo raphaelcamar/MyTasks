@@ -13,8 +13,6 @@ export class UpdateComponent implements OnInit {
 
   tasks : Tasks;
   constructor(
-    private route : ActivatedRoute, 
-    private router : Router, 
     private taskService : TasksService,
     @Inject(MAT_DIALOG_DATA) private task : Tasks){
       this.tasks = this.task
@@ -33,7 +31,6 @@ export class UpdateComponent implements OnInit {
      this.taskService.update(this.tasks)
      .subscribe(resp =>{
       this.taskService.message('Tarefa editada com sucesso!')
-      console.log(resp)
        
      });
   }

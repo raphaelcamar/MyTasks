@@ -1,6 +1,6 @@
 <p class="title">Cadastro no Mytasks</p>
 <div class="container" >
-<form [formGroup]="formulary" (ngSubmit)="subscribe()">
+<form [formGroup]="formulary">
     <mat-form-field appearance="fill" color="accent">
         <mat-label>Nome completo</mat-label>
         <input matInput type="name" formControlName="name" name="name" placeholder="Nome"/>
@@ -40,7 +40,7 @@
         </mat-slide-toggle>
       </section>
 
-      <button mat-button [disabled]="!formulary.valid" class="button">Cadastrar</button>
+      <button mat-button [disabled]="!formulary.valid" class="button" (click)="subscribe()">Cadastrar</button>
 </form>
 
 </div>

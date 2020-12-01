@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <div >
   
 <h1 class="tasks" >Cadastre uma tarefa</h1>
@@ -48,14 +48,20 @@
 
   </form>
 </div>
-<!-- [disabled]="!formulary.valid" -->
 
 <section>
   <h1 class="tasks" >Suas Tarefas!</h1>
-
-  <!-- MUDAR PARA COMPONENTE DEPOIS -->
-  <app-table></app-table>
-  
+  <app-table></app-table>  
 </section>
-<app-add-task></app-add-task>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
+
+<div class="add-task">
+    <button
+    (click)="addTask()"
+    mat-fab color="accent" 
+    #tooltip="matTooltip"
+    matTooltip="Adicione uma tarefa!"
+    aria-label="Button that displays a tooltip that hides when scrolled out of the container">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>

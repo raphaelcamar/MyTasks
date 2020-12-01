@@ -1,4 +1,4 @@
-interface TableData{
+export interface TableData{
     status ?: string
     name : string;
     description : string;
