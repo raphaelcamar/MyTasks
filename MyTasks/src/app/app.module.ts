@@ -39,6 +39,7 @@ import { TableComponent } from './components/table/table.component';
 import { MonthTasksComponent } from './components/tasks/month-tasks/month-tasks.component';
 import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ButtonAddTaskComponent } from './components/tasks/button-add-task/button-add-task.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MonthTasksComponent,
     TableComponent,
     AddTaskComponent,
+    ButtonAddTaskComponent,
   ],
   imports: [
     BrowserModule,

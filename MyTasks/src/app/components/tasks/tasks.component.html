@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div >
   
-<h1 class="tasks" >Cadastre uma tarefa</h1>
+<!-- <h1 class="tasks" >Cadastre uma tarefa</h1>
   <form class="container add-task" [formGroup]="formulary" (ngSubmit)="addTask()">
     <mat-form-field appearance="fill" color="accent">
       <mat-label >Nome</mat-label>
@@ -47,15 +47,12 @@
     <button mat-raised-button  [disabled]="!formulary.valid" color="primary" >Cadastrar</button>
 
   </form>
-</div>
-<!-- [disabled]="!formulary.valid" -->
+</div> -->
+<app-add-task></app-add-task>
 
 <section>
   <h1 class="tasks" >Suas Tarefas!</h1>
-
-  <!-- MUDAR PARA COMPONENTE DEPOIS -->
-  <app-table></app-table>
-  
+  <app-table></app-table> 
 </section>
-<app-add-task></app-add-task>
+<!-- <app-button-add-task></app-button-add-task> -->
 <app-footer></app-footer>

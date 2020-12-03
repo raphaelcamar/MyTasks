@@ -41,5 +41,8 @@ section{
 }
 .edit{
   color: #33c58b;
-
+}
+button{
+  padding : 0;
+  margin : 0 ;
 }

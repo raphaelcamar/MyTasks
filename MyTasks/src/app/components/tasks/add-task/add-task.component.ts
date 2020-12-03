@@ -23,9 +23,9 @@ export class AddTaskComponent implements OnInit {
   formulary : FormGroup;
   dateTime = new Date();
   displayedColumns: string[];
-  dataSource : Tasks[]
+  dataSource : Tasks[];
 
-  constructor(private taskService : TasksService, private dialog : MatDialog) { 
+  constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder) { 
 
     this.user = JSON.parse(localStorage.getItem('logged'));
     
@@ -40,40 +40,50 @@ export class AddTaskComponent implements OnInit {
   
   this.tasks.idUser = id;
 
-    // this.formValidation();
+  this.formValidation();
   }
 
   addTask(){
-    this.dialog.open(TasksComponent, )
-  
+    
   }
+
+   formValidation(){
+     this.formulary = this.fb.group({
+       name : ['', Validators.compose([
+         Validators.required,
+         validations.completeName])],
+       description : ['', Validators.compose([
+         Validators.required,
+         validations.completeName])],
+       data : ['', Validators.compose([
+         Validators.required
+       ])],
+       isFinished : ['', Validators.compose([
+         Validators.required])],
+       importance : ['',Validators.compose([
+         Validators.required,
+         Validators.maxLength(35)
+       ])],
+     })
+   }
+
+  //  get name(){
+  //    return this.formulary.get('name');
+  //  }
+
+  //  get description(){
+  //    return this.formulary.get('description');
+  //  }
+
+  //  get data(){
+  //    return this.formulary.get('data')
+  //  }
+
+  //  get isFinished(){
+  //    return this.formulary.get('isFinished')
+  //  }
+
+  //  get importance(){
+  //    return this.formulary.get('importance')
+  //  }
 }
-
-//   formValidation(){
-//     this.formulary = this.fb.group({
-//       name : ['', Validators.compose([
-//         Validators.required,
-//         validations.completeName])],
-//       description : ['', Validators.compose([
-//         Validators.required,
-//         validations.completeName])],
-//       data : ['', Validators.compose([
-//         Validators.required
-//       ])],
-//       isFinished : ['', Validators.compose([
-//         Validators.required])],
-//       importance : ['',Validators.compose([
-//         Validators.required,
-//         Validators.maxLength(35)
-//       ])],
-//     })
-//   }
-// }
-
-  // const id = this.tasks.idUser;
-    // this.tasks = this.formulary.value;
-    // this.tasks.idUser = id;
-    // this.taskService.create(this.tasks)
-    //   .subscribe(resp =>{
-    //     this.taskService.message('Tarefa Adicionada com sucesso!')
-    // });

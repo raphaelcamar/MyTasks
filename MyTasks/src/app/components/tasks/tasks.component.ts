@@ -46,16 +46,10 @@ export class TasksComponent implements OnInit {
   
   this.tasks.idUser = id;
 
-  //MUDAR A LOGICA E COLOCAR ISSO EM UM COMPONENT
-  this.taskService.read(id)
-  .subscribe(resp =>{
-    this.dataSource = resp
-    this.tableService.TableData = resp
+  this.readTasks(this.tasks.idUser)
 
-    console.log(resp[0].data)
-    this.allTasks = resp
-    this.displayedColumns = ['name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
-    });
+  //MUDAR A LOGICA E COLOCAR ISSO EM UM COMPONENT
+
 
     this.formValidation();
   }
@@ -67,7 +61,16 @@ export class TasksComponent implements OnInit {
     this.taskService.create(this.tasks)
       .subscribe(resp =>{
         this.taskService.message('Tarefa Adicionada com sucesso!')
+        this.readTasks(this.tasks.idUser)
     });
+  }
+
+  readTasks(id : number){
+    this.taskService.read(id)
+    .subscribe(resp =>{
+      this.dataSource = resp
+      this.tableService.TableData = resp
+      });
   }
 
   formValidation(){

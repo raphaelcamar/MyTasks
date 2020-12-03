@@ -1,21 +1,20 @@
-<!-- <app-header></app-header>
-<div >
+<div class="container">
   
 <h1 class="tasks" >Cadastre uma tarefa</h1>
-  <form class="container add-task" [formGroup]="formulary" (ngSubmit)="addTask()">
-    <mat-form-field appearance="fill" color="accent">
+  <form class="add-task" [formGroup]="formulary" (ngSubmit)="addTask()">
+    <mat-form-field appearance="fill" color="accent" class="input">
       <mat-label >Nome</mat-label>
       <input matInput type="text" formControlName="name" name="name" placeholder="Nome" required>
       <mat-error >Nome não pode ser vazio, nem conter números ou caracteres especiais</mat-error>
     </mat-form-field>
   
-    <mat-form-field appearance="fill" color="accent">
+    <mat-form-field appearance="fill" color="accent" class="input">
       <mat-label >Descrição</mat-label>
       <input matInput type="text" formControlName="description" name="description" placeholder="Descrição" required/>
       <mat-error >Descrição não pode ser vazio, nem conter números ou caracteres especiais</mat-error>
     </mat-form-field>
   
-    <mat-form-field color="accent" appearance="fill">
+    <mat-form-field color="accent" appearance="fill" class="input">
       <mat-label>Selecione a data</mat-label>
       <input matInput [matDatepicker]="picker2" formControlName="data" required>
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
@@ -23,7 +22,7 @@
       <mat-error >A data tem que ser válida</mat-error>
     </mat-form-field>
   
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="input">
       <mat-label>Processo</mat-label>
       <mat-select formControlName="isFinished">
         <mat-option value="Não iniciado" selected>Não iniciado</mat-option>
@@ -34,7 +33,7 @@
       <mat-error>Não pode ser vazio!</mat-error>
     </mat-form-field>
   
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="input">
       <mat-label>Importância</mat-label>
       <mat-select formControlName="importance">
         <mat-option value="Sem importancia" selected>Sem muita importância</mat-option>
@@ -44,24 +43,7 @@
       <mat-error>Não pode ser vazio!</mat-error>
     </mat-form-field>
     
-    <button mat-raised-button  [disabled]="!formulary.valid" color="primary" >Cadastrar</button>
+    <button mat-raised-button  class="input" [disabled]="!formulary.valid" color="primary" >Cadastrar</button>
 
   </form>
 </div>
-
-<section>
-  <h1 class="tasks" >Suas Tarefas!</h1>
-  <app-table></app-table>  
-</section>
-<app-footer></app-footer> -->
-
-<div class="add-task">
-    <button
-    (click)="addTask()"
-    mat-fab color="accent" 
-    #tooltip="matTooltip"
-    matTooltip="Adicione uma tarefa!"
-    aria-label="Button that displays a tooltip that hides when scrolled out of the container">
-      <mat-icon>add</mat-icon>
-    </button>
-  </div>

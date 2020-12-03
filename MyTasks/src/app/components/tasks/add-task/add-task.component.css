@@ -1,5 +1,14 @@
+.container{
+    width: 90%;
+    margin : 0 auto;
+}
+
 .add-task{
-    position: fixed;
-    right: 3%;
-    bottom: 3%;
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.input{
+    width: 30%;
 }
