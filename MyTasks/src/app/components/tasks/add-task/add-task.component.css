@@ -1,14 +1,28 @@
 .container{
-    width: 90%;
+    width: 80%;
     margin : 0 auto;
 }
-
 .add-task{
     display : flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
 }
 .input{
     width: 30%;
+    margin-bottom: 2%;
+}
+.button{
+    width: 100%;
+    padding : 0;
+    height : 30%
+}
+.input-form{
+    width: 100%;
+    margin : 0 auto;
+    display:flex;
+    justify-content: space-between;
+}
+.db  > .input{
+    width: 49%;
 }

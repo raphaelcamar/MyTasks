@@ -24,6 +24,7 @@ export class AddTaskComponent implements OnInit {
   dateTime = new Date();
   displayedColumns: string[];
   dataSource : Tasks[];
+  buttonStyle : any
 
   constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder) { 
 
@@ -41,10 +42,18 @@ export class AddTaskComponent implements OnInit {
   this.tasks.idUser = id;
 
   this.formValidation();
+
   }
 
   addTask(){
-    
+    console.log('Entrou aqui')
+    const id = this.tasks.idUser;
+    this.tasks = this.formulary.value;
+    this.tasks.idUser = id;
+    this.taskService.create(this.tasks)
+    .subscribe(resp =>{
+      this.taskService.message('Tarefa criada com sucesso!')
+    }) 
   }
 
    formValidation(){
@@ -66,24 +75,4 @@ export class AddTaskComponent implements OnInit {
        ])],
      })
    }
-
-  //  get name(){
-  //    return this.formulary.get('name');
-  //  }
-
-  //  get description(){
-  //    return this.formulary.get('description');
-  //  }
-
-  //  get data(){
-  //    return this.formulary.get('data')
-  //  }
-
-  //  get isFinished(){
-  //    return this.formulary.get('isFinished')
-  //  }
-
-  //  get importance(){
-  //    return this.formulary.get('importance')
-  //  }
 }
