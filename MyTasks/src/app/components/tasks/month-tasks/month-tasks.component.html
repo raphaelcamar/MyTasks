@@ -5,24 +5,31 @@
 
    <div class="wrapper-card">
 
-        <div class="card finished">
+        <div class="card finished mat-elevation-z5">
             <div class="container-card">
                 <div class="count">{{finishedTasks}}</div>
                 <p>Tarefas finalizadas</p>
             </div>
         </div>
 
-        <div class="card canceled">
+        <div class="card canceled mat-elevation-z5">
             <div class="container-card">
                 <div class="count">{{canceledTasks}}</div>
                 <p>Tarefas Canceladas</p>
             </div>
         </div>
 
-        <div class="card progress">
+        <div class="card progress mat-elevation-z5">
             <div class="container-card">
                 <div class="count">{{progressTasks}}</div>
-                <p>Tarefas Em andamento</p>
+                <p>Tarefas Em processo</p>
+            </div>
+        </div>
+
+        <div class="card not-started mat-elevation-z5">
+            <div class="container-card">
+                <div class="count">{{notStartedTasks}}</div>
+                <p>Tarefas Não iniciadas</p>
             </div>
         </div>
     </div>

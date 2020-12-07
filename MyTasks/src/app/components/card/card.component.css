@@ -12,7 +12,7 @@
     border-radius: 9px;
     margin : 3% 0;
     background: white;
-    box-shadow: 0px 3px 8px rgb(197, 197, 197);
+    /* box-shadow: 0px 3px 8px rgb(197, 197, 197); */
 }   
 img{
     width: 100%;
@@ -20,16 +20,21 @@ img{
 }
 .infos{
     width: 95%;
-    margin : 0 auto;
+    margin : 5% auto;
 }
 .wrapper-infos{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
 }
-
 button{
     background-color : #33c58b;
     color: rgb(245, 245, 245);
+    width: 100%;
+    /* margin-bottom: 3%; */
+}
+button:hover{
+    transform: scale(1.06);
+    transition: all ease 0.2s;
 }

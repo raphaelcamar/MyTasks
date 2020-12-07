@@ -8,52 +8,54 @@ export class changeDate{
         return `${dia}/${mes}/${ano}`;
     }
 
-    static ReturningNameMonthByNumber(month : number):string{
-        if(month == 1){
+    static ReturningNameMonthByNumber(month : string):string{
+      
+
+        if(parseInt(month) == 1){
             return 'Janeiro'
           }
     
-          if(month == 2){
+          if(parseInt(month) == 2){
             return 'Fevereiro'
           }
     
-          if(month == 3){
+          if(parseInt(month) == 3){
             return 'Março'
           }
     
-          if(month == 4){
+          if(parseInt(month) == 4){
             return 'Abril'
           }
     
-          if(month == 5){
+          if(parseInt(month) == 5){
             return 'Maio'
           }
     
-          if(month == 6){
+          if(parseInt(month) == 6){
             return 'Junho'
           }
     
-          if(month == 7){
+          if(parseInt(month) == 7){
             return 'Julho'
           }
     
-          if(month == 8){
+          if(parseInt(month) == 8){
             return 'Agosto'
           }
     
-          if(month == 9){
+          if(parseInt(month) == 9){
             return 'Setembro'
           }
     
-          if(month == 10){
+          if(parseInt(month) == 10){
             return 'Outubro'
           }
     
-          if(month == 11){
+          if(parseInt(month) == 11){
             return 'Novembro'
           }
     
-          if(month == 12){
+          if(parseInt(month) == 12){
             return 'Dezembro'
           }
     }

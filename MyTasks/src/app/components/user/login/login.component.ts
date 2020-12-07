@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
              console.log('Usuário não encontrado')
            }else{
              localStorage.setItem('logged', JSON.stringify(resp[0]));
-             this.router.navigate(['/tasks'])
+             this.router.navigate(['/user/infos'])
            }   
       })
   }

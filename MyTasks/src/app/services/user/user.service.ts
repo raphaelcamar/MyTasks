@@ -24,6 +24,8 @@ export class UserService {
   }
 
   read(id : number):Observable<User>{
+
+    //Arrumar a lógica para possuir o usuário e sempre quando necessitar, pegar daqui
     return this.http.get<User>(`https://backend-mytasks.herokuapp.com/users/${id}`)
   }
 

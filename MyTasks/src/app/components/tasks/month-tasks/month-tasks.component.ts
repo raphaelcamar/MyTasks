@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
+import { TasksService } from 'src/app/services/tasks/tasks.service';
 import { changeDate } from 'src/helpers/changeDate';
 import { HeaderService } from '../../header/header.service';
 import { TableService } from '../../table/table.service';
@@ -16,10 +18,12 @@ export class MonthTasksComponent implements OnInit {
   finishedTasks : number = 0;
   progressTasks : number = 0;
   canceledTasks : number = 0;
+  notStartedTasks : number = 0;
   displayedColumns: string[];
-  dataSource : Tasks[]
+  dataSource : Tasks[];
+  monthNumber : string
 
-  constructor(private headerService : HeaderService, private tableService : TableService) { 
+  constructor(private headerService : HeaderService, private tableService : TableService, private tasksService : TasksService, private router : Router) { 
     this.headerService.headerData = {
       isAdm : true,
       isLogged : true,
@@ -30,26 +34,38 @@ export class MonthTasksComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    const {month, tasks} = history.state.data
-    this.month = changeDate.ReturningNameMonthByNumber(month);
-    this.tasks = tasks
-    this.dataSource = tasks
+    
+    this.monthNumber =this.router.url.slice(19)
+    
+    console.log(this.monthNumber)
+    this.month = changeDate.ReturningNameMonthByNumber(this.monthNumber);
+    let user = JSON.parse(localStorage.getItem('logged'));
+    this.tasksService.getTasksByMonth(user.id, this.monthNumber).subscribe(resp =>{
+      console.log(resp)
+      this.tasks = resp;
+      this.dataSource = resp;
+      this.tableService.TableData = resp;
 
-    this.tableService.TableData = this.tasks
-
-    console.log(this.tasks)
-    this.tasks.forEach(item =>{
+      this.tasks.forEach(item =>{
       
-      if(item.isFinished == 'Finalizado'){
-        this.finishedTasks += 1;
-      }
+        if(item.isFinished == 'Finalizado'){
+          this.finishedTasks += 1;
+        }
+  
+        if(item.isFinished == 'Em processo'){
+          this.progressTasks += 1;
+        }
+        if(item.isFinished == 'Cancelado'){
+          this.canceledTasks += 1;
+        }
+  
+        if(item.isFinished == 'Não iniciado'){
+          this.notStartedTasks +=1;
+        }
 
-      if(item.isFinished == 'Em processo'){
-        this.progressTasks += 1;
-      }
-      if(item.isFinished == 'Cancelado'){
-        this.canceledTasks += 1;
-      }
+      })
     })
+
+
   }
 }

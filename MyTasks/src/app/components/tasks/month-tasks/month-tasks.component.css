@@ -1,6 +1,7 @@
 .container{
     width: 80%;
     margin : 0 auto;
+    height: 90vh;
 }
 .title{
     text-align: center;
@@ -15,7 +16,7 @@
 .card{
     color: white;
     height: 20vh;
-    width: 30%;
+    width: 20%;
 }
 .finished{
     background-color: #33C58B;
@@ -36,6 +37,9 @@
     align-items: center;
     justify-content: center;
     height : 25vh;
+}
+.container-card > p{
+    margin-top: 5%;
 }
 .count{
     margin-bottom : 10%;

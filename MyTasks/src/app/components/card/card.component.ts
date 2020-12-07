@@ -35,7 +35,6 @@ export class CardComponent implements OnInit {
   getValuesAndSeparateByMonth(){
     this.cardService.cardData.forEach(item =>{
       let data = new Date(item.data).getMonth() + 1;
-      console.log(data)
       if(data == 1){
         this.arrJan.push(item)
       }
@@ -88,6 +87,6 @@ export class CardComponent implements OnInit {
 
   sendData(tasks : Tasks[], month : number):void{
     console.log(tasks)
-    this.router.navigate(['/users/tasks/month'], {state : {data : {month : month, tasks}}})
+    this.router.navigate(['/users/tasks/month/1'])
   }
 }

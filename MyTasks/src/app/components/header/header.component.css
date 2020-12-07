@@ -20,3 +20,6 @@
     align-items: center;
     justify-content: center;
 }
+.selected{
+    background: #F1F1F1
+}

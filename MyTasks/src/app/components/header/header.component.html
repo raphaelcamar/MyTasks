@@ -8,17 +8,19 @@
             </button>
             <mat-menu #menu="matMenu">
 
-                <button mat-menu-item routerLink="/user/infos">
+                <button mat-menu-item routerLink="/user/infos" routerLinkActive="selected">
                     <mat-icon>info</mat-icon>
                     <span>Informações</span>
                 </button>
 
-                <button mat-menu-item routerLink="/tasks">
+                <button mat-menu-item routerLink="/tasks" routerLinkActive="selected">
                     <mat-icon>library_books</mat-icon>
-                    <span>Minhas tarefas</span>
+                    <span>Todas tarefas</span>
                 </button>
 
-                <button *ngIf="adm" mat-menu-item>
+                <button *ngIf="adm" mat-menu-item #tooltip="matTooltip" routerLinkActive="selected"
+                matTooltip="Em breve!"
+                matTooltipHideDelay="100" >
                     <mat-icon>dashboard</mat-icon>
                     <span>Dados do Aplicativos</span>
                 </button>

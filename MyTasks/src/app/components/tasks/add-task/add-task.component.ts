@@ -28,7 +28,7 @@ export class AddTaskComponent implements OnInit {
 
   constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder) { 
 
-    this.user = JSON.parse(localStorage.getItem('logged'));
+  this.user = JSON.parse(localStorage.getItem('logged'));
     
   }
 

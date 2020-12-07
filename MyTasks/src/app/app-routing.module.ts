@@ -20,7 +20,7 @@ const routes: Routes = [
   {path : 'user/infos', component : InfosComponent},
   {path : 'subscribe', component : SubscribeComponent},
   {path : 'users/data', component : AdmComponent ,canActivate:[AuthGuardService]},
-  {path : 'users/tasks/month', component : MonthTasksComponent}
+  {path : 'users/tasks/month/:month', component : MonthTasksComponent}
 ];
 
 @NgModule({
