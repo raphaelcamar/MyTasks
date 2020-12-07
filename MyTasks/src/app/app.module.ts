@@ -40,7 +40,8 @@ import { MonthTasksComponent } from './components/tasks/month-tasks/month-tasks.
 import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ButtonAddTaskComponent } from './components/tasks/button-add-task/button-add-task.component';
-
+import {MatSortModule} from '@angular/material/sort';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,8 @@ import { ButtonAddTaskComponent } from './components/tasks/button-add-task/butto
     MatCardModule,
     MatSelectModule,
     MatTooltipModule,
+    MatSortModule,
+    ChartsModule,
   ],
   providers: [
     // { provide : LOCALE_ID, useValue : 'pt-BR'},

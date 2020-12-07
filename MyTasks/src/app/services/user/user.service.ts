@@ -40,4 +40,8 @@ export class UserService {
   delete(id : number):Observable<User>{
     return this.http.delete<User>(`https://backend-mytasks.herokuapp.com/users/${id}`)
   }
+
+  getAllUsers():Observable<User[]>{
+    return this.http.get<User[]>(`https://backend-mytasks.herokuapp.com/users`)
+  }
 }

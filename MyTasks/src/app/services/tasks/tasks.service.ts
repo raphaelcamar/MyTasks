@@ -45,4 +45,9 @@ export class TasksService {
   getTasksByMonth(id: number, month : string): Observable<Tasks[]>{
     return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks?data_like=^[0-9]{4}\-${month}\-[0-9]{2}&idUser=${id}`);
   }
+
+  getAllTasks(): Observable<Tasks[]>{
+    return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks`);
+  }
+
 }
