@@ -19,7 +19,7 @@ const routes: Routes = [
   {path : 'delete/:id', component : DeleteComponent},
   {path : 'user/infos', component : InfosComponent},
   {path : 'subscribe', component : SubscribeComponent},
-  {path : 'users/data', component : AdmComponent ,canActivate:[AuthGuardService]},
+  {path : 'users/data', component : AdmComponent ,},
   {path : 'users/tasks/month/:month', component : MonthTasksComponent}
 ];
 

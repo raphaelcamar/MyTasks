@@ -1,5 +1,8 @@
+<app-header></app-header>
+
+<div class="title">Tarefas registradas neste ano</div>
 <div class="container">
-    <div>
+  <div class="container-dashboard mat-elevation-z5">
       <div style="display: block">
         <canvas baseChart
           [datasets]="barChartData"
@@ -10,7 +13,23 @@
         </canvas>
       </div>
     </div>
+
+    <div class="container-dashboard minimum mat-elevation-z5">
+      <!-- <div class="title">Quantidade de usuários registrados</div> -->
+        <div style="display: block">
+            <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
   </div>
+
+  <div class="title">Tarefas registradas em determinado mês</div>
 
   <!-- <div class="container">
     <div>

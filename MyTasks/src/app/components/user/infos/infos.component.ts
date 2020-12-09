@@ -6,7 +6,6 @@ import { TasksService } from 'src/app/services/tasks/tasks.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { changeName } from 'src/helpers/changeName';
 import { validations } from 'src/helpers/validation';
-import { Card } from '../../card/card.data';
 import { CardService } from '../../card/card.service';
 import { HeaderService } from '../../header/header.service';
 

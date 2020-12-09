@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
+import { User } from 'src/app/models/user.model';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
 import { changeDate } from 'src/helpers/changeDate';
+import { changeName } from 'src/helpers/changeName';
 import { HeaderService } from '../../header/header.service';
 import { TableService } from '../../table/table.service';
 
@@ -13,7 +15,7 @@ import { TableService } from '../../table/table.service';
 })
 export class MonthTasksComponent implements OnInit {
 
-  tasks : Tasks[]
+  tasks : Tasks[];
   month : string;
   finishedTasks : number = 0;
   progressTasks : number = 0;
@@ -21,26 +23,19 @@ export class MonthTasksComponent implements OnInit {
   notStartedTasks : number = 0;
   displayedColumns: string[];
   dataSource : Tasks[];
-  monthNumber : string
+  monthNumber : string;
+  user : User;
 
   constructor(private headerService : HeaderService, private tableService : TableService, private tasksService : TasksService, private router : Router) { 
-    this.headerService.headerData = {
-      isAdm : true,
-      isLogged : true,
-      nameUser : 'Raphael',
-      title : 'Tarefas Mensais',
-      logout : true,
-      routeUrl : ''
-    }
+
   }
   ngOnInit(): void {
-    
-    this.monthNumber =this.router.url.slice(19)
-    
-    console.log(this.monthNumber)
+    this.user = JSON.parse(localStorage.getItem('logged'));
+    this.monthNumber = this.router.url.slice(19);
+
     this.month = changeDate.ReturningNameMonthByNumber(this.monthNumber);
     let user = JSON.parse(localStorage.getItem('logged'));
-    this.tasksService.getTasksByMonth(user.id, this.monthNumber).subscribe(resp =>{
+    this.tasksService.getTasksByMonthAndIdUser(user.id, this.monthNumber).subscribe(resp =>{
       console.log(resp)
       this.tasks = resp;
       this.dataSource = resp;
@@ -65,6 +60,15 @@ export class MonthTasksComponent implements OnInit {
 
       })
     })
+
+    this.headerService.headerData = {
+      isAdm : this.user.isAdm,
+      isLogged : true,
+      nameUser : changeName.firstName(this.user.name),
+      title : 'Tarefas Mensais',
+      logout : true,
+      routeUrl : ''
+    }
 
 
   }

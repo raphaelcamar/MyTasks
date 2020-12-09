@@ -86,7 +86,6 @@ export class CardComponent implements OnInit {
   }
 
   sendData(tasks : Tasks[], month : number):void{
-    console.log(tasks)
     this.router.navigate(['/users/tasks/month/1'])
   }
 }

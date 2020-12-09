@@ -42,12 +42,15 @@ export class TasksService {
     return this.http.delete<Tasks>(`https://backend-mytasks.herokuapp.com/tasks/${id}`);
   }
 
-  getTasksByMonth(id: number, month : string): Observable<Tasks[]>{
+  getTasksByMonthAndIdUser(id: number, month : string): Observable<Tasks[]>{
     return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks?data_like=^[0-9]{4}\-${month}\-[0-9]{2}&idUser=${id}`);
+  }
+
+  getTasksByMonth(month : string):Observable<Tasks[]>{
+    return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks?data_like=^[0-9]{4}\-${month}\-[0-9]{2}`)
   }
 
   getAllTasks(): Observable<Tasks[]>{
     return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks`);
   }
-
 }
