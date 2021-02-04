@@ -1,24 +1,90 @@
-<p class="title">Cadastro no Mytasks</p>
+<div class="container">
+
+  <div class="wrapper-left">
+    <div class="sentence">Está a poucos passos de criar sua conta em MyTasks!</div>
+    <div class="img">
+      <img src="../../../../assets/subscribe-svg.svg" alt="">
+    </div>
+  </div>
+
+  <div class="wrapper-right">
+    <div class="wrapper-subscribe">
+      <div class="header">
+
+        <div class="items">
+          <a href="#">Sobre nós</a>
+          <a routerLink="">Faça seu login</a>
+        </div>
+  
+      </div>
+
+      <div class="title">Cadastro</div>
+      <p class="subtitle">Bem vindo de volta!</p>
+      <div class="description">
+        Um lugar para te ajudar a organizar sua vida,de forma simples. <br/> Faça seu cadastro e comece já! 
+      </div>
+
+      <form [formGroup]="formulary">
+        <div class="wrapper-inputs">
+          <div class="input-form">
+            <label for="name">Nome completo</label>
+            <!-- <p *ngIf="name.errors" class="errors">Nome completo deverá ser válido</p> -->
+            <input type="text" formControlName="name" placeholder="Nome" id="name" required/>
+          </div>
+          <div class="input-form">
+            <label for="cpf">CPF</label>
+            <!-- <p *ngIf="cpf.errors" class="errors">CPF deverá ser válido</p> -->
+            <input type="text" formControlName="cpf" placeholder="Ex : 012.345.678-90"  id="cpf" required/>
+          </div>
+        </div>
+
+        <div class="wrapper-inputs">
+          <div class="input-form">
+            <label for="email">Email</label>
+            <!-- <p *ngIf="email.errors" class="errors">E-mail deverá ser válido</p> -->
+            <input type="email" formControlName="email" placeholder="Ex : email@gmail.com" id="email" required/>
+          </div>
+          <div class="input-form">
+            <label for="password">Senha</label>
+            <!-- <p *ngIf="password.errors" class="errors">Senha deverá ser válida, com o mínimo de 7 caracteres e o máximo de 15 caracteres</p> -->
+            <input formControlName="password" placeholder="Sua senha" id="password" required/>
+          </div>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" name="terms" id="terms">
+          <label for="terms">Concordo com os termos de <a class="link">serviço e privacidade</a></label>
+        </div>
+
+        <button  [ngClass]="(formulary.valid == false)? 'disabled' : ''"[disabled]="!formulary.valid" (click)="subscribe()">Cadastrar</button>
+      </form>
+    </div>
+
+    
+  </div>
+</div>
+
+
+
+<!-- 
+ <p class="title">Cadastro no Mytasks</p>
 <div class="container" >
 <form [formGroup]="formulary">
     <mat-form-field appearance="fill" color="accent">
         <mat-label>Nome completo</mat-label>
         <input matInput type="name" formControlName="name" name="name" placeholder="Nome"/>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error *ngIf="name.errors">Nome completo deverá ser válido</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" color="accent">
       <mat-label>CPF</mat-label>
         <input matInput type="text" formControlName="cpf" name="cpf" placeholder="CPF"/>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error *ngIf="cpf.errors">Digite um CPF válido!</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" color="accent">
       <mat-label>E-mail</mat-label>
         <input matInput type="email" formControlName="email" name="email" placeholder="e-mail"/>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-error *ngIf="email.errors">O E-mail deverá ser válido</mat-error>
       </mat-form-field>
 
@@ -30,17 +96,7 @@
           </button>
         <mat-error *ngIf="password.errors">Senha deverá ser válida, com o mínimo de 7 caracteres</mat-error>
       </mat-form-field>
-      
-      <section class="example-section">
-        <mat-slide-toggle
-            [checked]="isAdm"
-            formControlName="isAdm"
-            >
-            É adminstrador?
-        </mat-slide-toggle>
-      </section>
-
-      <button mat-button [disabled]="!formulary.valid" class="button" (click)="subscribe()">Cadastrar</button>
+    
 </form>
 
-</div>
+</div> -->

@@ -1,34 +1,156 @@
+*{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
 .container{
-    display: flex;
+    background-color: '#F2F4F8';
+    display:flex;
+    flex-direction: row;
     height: 100vh;
-    justify-content: center;
-    margin : 0 auto;
-    align-items: center;
+    width: 100%;
 }
-.form{
-     display:flex;
-    flex-direction: column;
-    width: 30%;
-    height: 30vh;
-    justify-content: space-between;
-    margin : 0 auto;
+.wrapper-left{
+    width: 55%;
+    /* background-color: aqua; */
 }
-.form p{
-    text-align: center;
-}
-.button{
-    background-color:#1e88e5;
-    width: 50%;
-    margin : 0 auto;
-    color: white;
-}
-.subscribe-login{
+
+.header{
+    width: 90%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
 }
-.subscribe-login a{
+.title-project{
+    font-size: 28px;
+    font-weight: bold;
+    color: #0F4C81;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+.options > a{
+    text-decoration: none;
     color: black;
 }
-a:hover{
+.options > a:hover{
     text-decoration: underline;
+    text-decoration-color: #2680EB;
+    color: #2680EB;
+}
+.draw{
+    margin-top: 20%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+/* -------------------------------------------- WRAPPER RIGHT -------------------------------------------- */
+
+
+.wrapper-right{
+    background: white;
+    width: 45%;
+}
+
+.wrapper-login{
+    width: 70%;
+    margin : 0 auto;
+}
+.title-login{
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    font-size: 25px;
+    font-weight: bold;
+    color: #0F4C81;
+}
+.subtitle{
+    font-size: 18px;
+    color: #0F4C81;
+    /* word-spacing: 0px; */
+    margin-bottom: 4%;
+    font-weight: 500;
+}
+
+.description{
+    padding-top: 2%;
+    padding-bottom: 4%;
+    border-bottom-style: solid;
+    border-bottom-color: #CFCFCF;
+    border-bottom-width: thin;
+    word-spacing: 1px;
+}
+
+.input-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+.input-form > label{
+    padding-bottom: 0.5rem;
+}
+.input-form > input{
+    border-width: 0.36px;
+    border-color: rgba(219, 219, 219, 0.36);
+    box-shadow: 5px 5px 3px -2px rgba(0,0,0,0.31);
+    padding: 1rem;
+    border-radius: 3px;
+}
+.input-form input:focus{
+    outline: none;
+    border-color: #2680EB ;
+}
+.options-login{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+button{
+    width: 100%;
+    padding: 1rem;
+    background-color: #2680EB;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+button:hover{
+    background-color: #2571cf;;
+}
+button:active{
+    transform: scale(0.9);
+}
+.option-subs{
+    padding-top: 1rem;
+    text-align: center;
+    color : #B9B9B9;
+}
+.wrapper-right a{
+    color: #2680EB;
+}
+.label-remember{
+    color : #B9B9B9;
+}
+.error{
+    color: #EF4E59;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #EF4E59;
+    background-color: #ef4e5981;
+}
+.erro-input label{
+   color : #EF4E59;
+}
+.erro-input input{
+    border: solid;
+    border-color: #EF4E59;
+    border-width: thin;
 }
