@@ -43,6 +43,7 @@ import { ButtonAddTaskComponent } from './components/tasks/button-add-task/butto
 import {MatSortModule} from '@angular/material/sort';
 import { ChartsModule } from 'ng2-charts';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     AddTaskComponent,
     ButtonAddTaskComponent,
     SidebarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

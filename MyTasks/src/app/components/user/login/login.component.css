@@ -209,7 +209,10 @@ button:active{
         width: 100%;
         margin: 0 auto;
         background: rgb(242,244,248);
-        background: linear-gradient(180deg, rgba(242,244,248,1) 81%, rgba(255,255,255,1) 100%);
+        background: -moz-linear-gradient(90deg, rgba(242,244,248,1) 91%, rgba(255,255,255,1) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(242,244,248,1) 91%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(90deg, rgba(242,244,248,1) 91%, rgba(255,255,255,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f4f8",endColorstr="#ffffff",GradientType=1);
     }
     .options{
         width: 50%;

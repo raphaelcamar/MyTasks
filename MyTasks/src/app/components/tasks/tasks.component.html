@@ -1,6 +1,6 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <div >
-  
+   -->
 <!-- <h1 class="tasks" >Cadastre uma tarefa</h1>
   <form class="container add-task" [formGroup]="formulary" (ngSubmit)="addTask()">
     <mat-form-field appearance="fill" color="accent">
@@ -48,11 +48,17 @@
 
   </form>
 </div> -->
-<app-add-task></app-add-task>
+<!-- <app-add-task></app-add-task> -->
 
-<section>
+<!-- <section>
   <h1 class="tasks" >Suas Tarefas!</h1>
   <app-table></app-table> 
-</section>
+</section> -->
 <!-- <app-button-add-task></app-button-add-task> -->
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
+
+<div class="parent">
+  <div class="header"> <app-header></app-header></div>
+  <div class="sidebar"><app-sidebar></app-sidebar> </div>
+  <div class="content">Tasks works!</div>
+</div>

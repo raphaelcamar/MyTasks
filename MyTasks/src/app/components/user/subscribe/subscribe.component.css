@@ -200,6 +200,14 @@ button:active{
     }
     .wrapper-left, .wrapper-right{
         width: 100%;
+
+    }
+    .wrapper-left{
+        background: rgb(0,111,254);
+        background: -moz-linear-gradient(180deg, rgba(0,111,254,1) 0%, rgba(255,255,255,1) 93%);
+        background: -webkit-linear-gradient(180deg, rgba(0,111,254,1) 0%, rgba(255,255,255,1) 93%);
+        background: linear-gradient(180deg, rgba(0,111,254,1) 0%, rgba(255,255,255,1) 93%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#006ffe",endColorstr="#ffffff",GradientType=1);
     }
     .sentence{
         width : 80%;

@@ -11,12 +11,15 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { UpdateComponent } from './components/tasks/update/update.component';
 import { InfosComponent } from './components/user/infos/infos.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 import { SubscribeComponent } from './components/user/subscribe/subscribe.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { Tasks } from './models/tasks.model';
 
 const routes: Routes = [
-  {path : 'infos', component : InfosComponent, pathMatch : 'full'},
+  {path : '', component : LoginComponent},
+  {path : 'infos', component : InfosComponent},
+  {path : 'profile', component : ProfileComponent},
   {path : 'tasks', component : TasksComponent},
   {path : 'update/:id', component :  UpdateComponent},
   {path : 'delete/:id', component : DeleteComponent},

@@ -27,26 +27,26 @@ export class TasksComponent implements OnInit {
 
     this.user = JSON.parse(localStorage.getItem('logged'));
     
-    this.headerService.headerData = {
-      title : 'Suas Tarefas!',
-      isLogged : true,
-      logout : true,
-      nameUser : changeName.firstName(this.user.name),
-      routeUrl : '',
-      isAdm : this.user.isAdm
-    }
+    // this.headerService.headerData = {
+    //   title : 'Suas Tarefas!',
+    //   isLogged : true,
+    //   logout : true,
+    //   nameUser : 'asdsa',
+    //   routeUrl : '',
+    //   isAdm : true
+    // }
   }
 
   ngOnInit(): void {
-  this.user = JSON.parse(localStorage.getItem('logged'));
+  // this.user = JSON.parse(localStorage.getItem('logged'));
 
-  const {id} = this.user;
+  // const {id} = this.user;
 
-  this.tasks = new Tasks();
+  // this.tasks = new Tasks();
   
-  this.tasks.idUser = id;
+  // this.tasks.idUser = id;
 
-  this.readTasks(this.tasks.idUser)
+  // this.readTasks(this.tasks.idUser)
 
   //MUDAR A LOGICA E COLOCAR ISSO EM UM COMPONENT
 
@@ -55,22 +55,22 @@ export class TasksComponent implements OnInit {
   }
 
   addTask(){
-    const id = this.tasks.idUser;
-    this.tasks = this.formulary.value;
-    this.tasks.idUser = id;
-    this.taskService.create(this.tasks)
-      .subscribe(resp =>{
-        this.taskService.message('Tarefa Adicionada com sucesso!')
-        this.readTasks(this.tasks.idUser)
-    });
+    // const id = this.tasks.idUser;
+    // this.tasks = this.formulary.value;
+    // this.tasks.idUser = id;
+    // this.taskService.create(this.tasks)
+    //   .subscribe(resp =>{
+    //     this.taskService.message('Tarefa Adicionada com sucesso!')
+    //     this.readTasks(this.tasks.idUser)
+    // });
   }
 
   readTasks(id : number){
-    this.taskService.read(id)
-    .subscribe(resp =>{
-      this.dataSource = resp
-      this.tableService.TableData = resp
-      });
+    // this.taskService.read(id)
+    // .subscribe(resp =>{
+    //   this.dataSource = resp
+    //   this.tableService.TableData = resp
+    //   });
   }
 
   formValidation(){

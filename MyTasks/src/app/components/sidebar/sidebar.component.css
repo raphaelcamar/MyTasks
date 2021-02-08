@@ -80,6 +80,7 @@ button:hover{
 .option{
     padding: 1.50rem;
     color: #A8ACB1;
+    outline: none;
 }
 .option:hover{
     background: #F2F4F8;
