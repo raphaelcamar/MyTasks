@@ -24,12 +24,12 @@
         Um lugar para te ajudar a organizar sua vida,de forma simples. <br/> Faça seu cadastro e comece já! 
       </div>
 
-      <form [formGroup]="formulary">
+      <form [formGroup]="formulary" autocomplete="off">
         <div class="wrapper-inputs">
           <div class="input-form">
             <label for="name">Nome completo</label>
             <!-- <p *ngIf="name.errors" class="errors">Nome completo deverá ser válido</p> -->
-            <input type="text" formControlName="name" placeholder="Nome" id="name" required/>
+            <input type="text" formControlName="name" placeholder="Nome" id="name" required autocomplete="nope"/>
           </div>
           <div class="input-form">
             <label for="cpf">CPF</label>
@@ -56,7 +56,12 @@
           <label for="terms">Concordo com os termos de <a class="link">serviço e privacidade</a></label>
         </div>
 
-        <button  [ngClass]="(formulary.valid == false)? 'disabled' : ''"[disabled]="!formulary.valid" (click)="subscribe()">Cadastrar</button>
+        <button  [ngClass]="(formulary.valid == false)? 'disabled' : ''" [disabled]="!formulary.valid" (click)="subscribe()">
+          <span class="load" [ngClass]="(hide == false)? 'hide' : ''">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          </span>
+          <span class="submit" [ngClass]="(hide == true)? 'hide' : ''">Entrar</span>
+        </button>
       </form>
     </div>
 

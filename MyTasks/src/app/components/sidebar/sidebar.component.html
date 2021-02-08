@@ -1,0 +1,23 @@
+<div class="container" >
+    <div class="header-sideBar">
+        <div class="title">MyTasks</div>
+        <!-- <div class="arrow" (click)="close()"><div class="wrapper-arrow" [ngClass]="(closeTab == false)? 'turn' : 'turnOut'" ><i class="fas fa-chevron-left"></i></div></div> -->
+        <button><i class="fas fa-plus"> </i>Adicionar tarefa</button>
+    </div>
+    
+    <div class="options">
+         <div class="option dashboard" routerLinkActive="selected" ><i class="fas fa-chart-line" routerLink="/infos" ></i> Dashboards</div>
+        <div class="option profile"><i class="fas fa-user"></i> Meu perfil</div>
+        <div class="option my-tasks"><i class="fas fa-tasks"></i> Minhas tarefas</div>
+    </div>
+
+    <!-- <div class="options" [ngClass]="(closeTab == false)? 'close-options' : ''">
+        <div class="option dashboard selected"><i class="fas fa-chart-line"></i></div>
+       <div class="option profile"><i class="fas fa-user"></i></div>
+       <div class="option my-tasks"><i class="fas fa-tasks"></i></div>
+   </div> -->
+    
+    <div class="svg">
+        <img src="../../../assets/side-bar.svg" alt="">
+    </div>
+</div>

@@ -1,21 +1,11 @@
-.infos{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 30vh;
-    justify-content: space-around;
-}
-.input-form{
-    width: 80%;
-    margin : 0 auto;
-    display:flex;
-    justify-content: space-between;
-}
-.input{
-    width: 40%;
-}
-.button{
-    width: 40%;
-    align-self: center;
-    text-align: center;
-}
+.parent {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .header { grid-area: 1 / 2 / 2 / 3; }
+    .sidebar { grid-area: 1 / 1 / 6 / 2; }
+    .content { grid-area: 2 / 2 / 6 / 3; }

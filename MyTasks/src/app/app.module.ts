@@ -42,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ButtonAddTaskComponent } from './components/tasks/button-add-task/button-add-task.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ChartsModule } from 'ng2-charts';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ChartsModule } from 'ng2-charts';
     TableComponent,
     AddTaskComponent,
     ButtonAddTaskComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

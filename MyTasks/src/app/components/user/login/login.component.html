@@ -711,10 +711,21 @@
           <label class="label-remember" for="rememberMe">Lembre-se de mim</label>
         </div>
 
-        <a href="">Esqueceu sua senha?</a>
-      </div>
+    
 
-      <button (click)="login()">Entrar</button>
+      <a href="">Esqueceu sua senha?</a>
+      </div>
+      <!-- <div class="option-checkbox">
+        <input type="checkbox" name="rememberMe" id="rememberMe" [(ngModel)]="rememberMe">
+        <label class="label-remember" for="rememberMe">Entrar como convidado</label>
+      </div> -->
+
+      <button (click)="login()">
+        <span class="load" [ngClass]="(hide == false)? 'hide' : ''">
+          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </span>
+        <span class="submit" [ngClass]="(hide == true)? 'hide' : ''">Entrar</span>
+      </button>
 
       <div class="option-subs">
         Não possui conta? <a routerLink="/subscribe">Registre-se!</a>

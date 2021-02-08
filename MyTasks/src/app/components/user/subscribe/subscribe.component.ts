@@ -15,22 +15,24 @@ export class SubscribeComponent implements OnInit {
 
   user : User;
   formulary : FormGroup;
-  hide = true;
+  hide : boolean = false;
 
   constructor(private userService : UserService, private router : Router, private fb : FormBuilder) { }
 
   ngOnInit(): void {
+    // this.hide = false;
     this.user = new User();
     this.formvalidation();
   }
 
   subscribe(){
+    this.hide = true;
     this.user = this.formulary.value
     this.user.name = changeName.upperCaseName(this.formulary.value.name);
 
        this.userService.create(this.user)
        .subscribe(resp =>{
-        // console.log(resp)
+        this.hide = false;
         localStorage.clear();
         this.router.navigate(['/tasks']);
         localStorage.setItem('logged', JSON.stringify(resp));

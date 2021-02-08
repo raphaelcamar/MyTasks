@@ -11,9 +11,10 @@ import { UserService } from 'src/app/services/user/user.service';
 export class LoginComponent implements OnInit {
 
   user : User;
-  hide : boolean = true
+  hide : boolean = false;
   error : boolean;
   rememberMe : boolean;
+
 
   constructor(private userService : UserService, private router : Router) { }
 
@@ -28,19 +29,24 @@ export class LoginComponent implements OnInit {
   }
   
   login():void{
-    
+    this.hide = true;
     this.userService.login(this.user.email, this.user.password)
     .subscribe(resp =>{
-      
+      this.hide = false;
       if(!resp[0]){
             this.error = true;
-           }else{
-            if(this.rememberMe){
-              localStorage.setItem('logged', JSON.stringify(resp[0]));
-            }
-            this.router.navigate(['/user/infos'])
-           }   
-      })
+      }else{
+        this.hide = false
+            
+        if(this.rememberMe){
+          localStorage.setItem('logged', JSON.stringify(resp[0]));
+        }else{
+          localStorage.clear();
+          sessionStorage.setItem('logged', JSON.stringify(resp[0]));
+        }
+          this.router.navigate(['infos']);
+      }   
+    })
   }
 
 }
