@@ -66,7 +66,7 @@ button{
     outline: none;
     margin-bottom: 1.25rem;
 }
-button > i{
+button > fa-icon{
     margin-right: 1.25rem;
 }
 button:hover{
@@ -86,7 +86,7 @@ button:hover{
     background: #F2F4F8;
     cursor: pointer;
 }
-.option > i{
+.option > fa-icon{
     margin-right: 1.50rem;
 }
 .selected{
@@ -102,6 +102,7 @@ button:hover{
     display: flex;
     align-items: flex-end;
 }
+
 /* .close{
     position: absolute;
     width: 10%;
