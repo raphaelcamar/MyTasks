@@ -44,7 +44,6 @@ import {MatSortModule} from '@angular/material/sort';
 import { ChartsModule } from 'ng2-charts';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -90,7 +89,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatTooltipModule,
     MatSortModule,
     ChartsModule,
-    FontAwesomeModule
   ],
   providers: [
     // { provide : LOCALE_ID, useValue : 'pt-BR'},

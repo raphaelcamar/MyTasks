@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faUser, faChartLine, faTasks, faPlus} from '@fortawesome/free-solid-svg-icons';
+// import {faUser, faChartLine, faTasks, faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,10 +8,10 @@ import {faUser, faChartLine, faTasks, faPlus} from '@fortawesome/free-solid-svg-
 })
 export class SidebarComponent implements OnInit {
 
-  faChartLine = faChartLine;
-  faUser = faUser;
-  faTasks = faTasks;
-  faPlus = faPlus;
+  // faChartLine = faChartLine;
+  // faUser = faUser;
+  // faTasks = faTasks;
+  // faPlus = faPlus;
 
   constructor() { }
 

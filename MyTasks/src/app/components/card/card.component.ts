@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tasks } from 'src/app/models/tasks.model';
 import { CardService } from './card.service';
-import {faRedo, faCheck, faTimes, faPause} from '@fortawesome/free-solid-svg-icons';
+// import {faRedo, faCheck, faTimes, faPause} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -12,10 +12,10 @@ import {faRedo, faCheck, faTimes, faPause} from '@fortawesome/free-solid-svg-ico
 })
 export class CardComponent implements OnInit {
 
-  faRedo = faRedo;
-  faCheck = faCheck;
-  faTimes = faTimes;
-  faPause = faPause;
+  // faRedo = faRedo;
+  // faCheck = faCheck;
+  // faTimes = faTimes;
+  // faPause = faPause;
 
   arrJan : Tasks[] = [];
   arrFeb : Tasks[] = [];

@@ -2,13 +2,13 @@
     <div class="header-sideBar">
         <div class="title">MyTasks</div>
         <!-- <div class="arrow" (click)="close()"><div class="wrapper-arrow" [ngClass]="(closeTab == false)? 'turn' : 'turnOut'" ><i class="fas fa-chevron-left"></i></div></div> -->
-        <button><fa-icon [icon]="faPlus"></fa-icon>Adicionar tarefa</button>
+        <button>Adicionar tarefa</button>
     </div>
     
     <div class="options">
-         <div class="option dashboard" routerLinkActive="selected" routerLink="/infos"><fa-icon [icon]="faChartLine"></fa-icon> Dashboards</div>
-        <div class="option profile" routerLinkActive="selected" routerLink="/profile"><fa-icon [icon]="faUser"></fa-icon> Meu perfil</div>
-        <div class="option my-tasks" routerLinkActive="selected" routerLink="/tasks"><fa-icon [icon]="faTasks"></fa-icon> Minhas tarefas</div>
+         <div class="option dashboard" routerLinkActive="selected" routerLink="/infos"> Dashboards</div>
+        <div class="option profile" routerLinkActive="selected" routerLink="/profile"> Meu perfil</div>
+        <div class="option my-tasks" routerLinkActive="selected" routerLink="/tasks"> Minhas tarefas</div>
     </div>
 
     <!-- <div class="options" [ngClass]="(closeTab == false)? 'close-options' : ''">
