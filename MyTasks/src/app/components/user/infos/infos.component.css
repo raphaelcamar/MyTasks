@@ -1,11 +1,11 @@
-.parent {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-    .header { grid-area: 1 / 2 / 2 / 3; }
-    .sidebar { grid-area: 1 / 1 / 6 / 2; }
-    .content { grid-area: 2 / 2 / 6 / 3; }
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.header-content{
+    width: stretch;
+}
+.content{
+    width: 90%;
+    margin: 2rem auto;
+}

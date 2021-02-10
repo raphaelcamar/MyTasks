@@ -1,5 +1,5 @@
 .container{
-    /* width: 20%; */
+    width: 100%;
     background: #FFF;
     height: 100vh;
     display: grid;
@@ -7,8 +7,13 @@
     grid-template-rows: 3fr 6fr 3fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    /* left : 0;
-    transition: all 0.3s; */
+    left: 0;
+    position: relative;
+    transition: ease left .2s;
+}
+
+.button-toggle{
+    display: none;
 }
 /* .wrapper{
     display:flex;
@@ -35,7 +40,7 @@
     justify-content: flex-end;
     width: 100%;
 }
-.arrow > .wrapper-arrow{
+.toggle-hide{
     border-radius: 50px;
     width: 2rem;
     height: 2rem;
@@ -44,16 +49,30 @@
     justify-content: center;
     background: #FFF;
     box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.31);
-    margin-right: -18%;
-    /* transform: rotateX(180deg); */
-}
-.arrow > .wrapper-arrow:hover{
-    cursor: pointer;
-}
-
-.wrapper-arrow > i{
     color: #006FFE;
     font-size: large;
+    position: absolute;
+    left: 245px;
+    top: 2.5%;
+    z-index: 10;
+    transition: ease left .2s;
+}
+.toggle-hide:hover{
+    cursor: pointer;
+}
+.toggle > mat-icon{
+    transform: rotate(180deg);
+}
+.toggle{
+    padding: 0 1.25rem;
+    left: -1%;
+}
+.toggle:hover{
+    margin-left: 0.5%;
+    transition: all ease .3s
+}
+mat-icon{
+    transition: ease .3s;
 }
 button{
     width: 100%;
@@ -65,12 +84,20 @@ button{
     cursor: pointer;
     outline: none;
     margin-bottom: 1.25rem;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
-button > fa-icon{
+button > mat-icon{
+    font-size: 1.55rem;
     margin-right: 1.25rem;
 }
 button:hover{
     background-color: #2571cf;
+}
+button:active{
+    transform: scale(0.9);
 }
 .options{
     display:flex;
@@ -81,12 +108,16 @@ button:hover{
     padding: 1.50rem;
     color: #A8ACB1;
     outline: none;
+    display : flex;
+    align-items : center;
+    
 }
 .option:hover{
     background: #F2F4F8;
     cursor: pointer;
 }
-.option > fa-icon{
+.icon{
+    font-size: 1.55rem;
     margin-right: 1.50rem;
 }
 .selected{
@@ -97,27 +128,54 @@ button:hover{
     color: #2571cf;
 }
 .svg{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: flex-end;
 }
-
-/* .close{
+.close{
     position: absolute;
-    width: 10%;
-    transition: width 0.3s;
-    z-index: 2;
-}  */
+    left: -500px;
+}
+.open{
+    left: 200px;
+}
+.container-close{
+    
+    left: -100%;
+    transition: left ease-in .2s;
+}
+.hide{
+    display: none;
+}
+@media(max-width: 1200px){
 
-/* .turn{
-    transition: all ease .2s;
-    transform: rotate(180deg);
+    .toggle-hide{
+        left: 385px;
+    }
+    .toggle{
+        padding: .50rem;
+        position: absolute;
+        left: -1px;
+    }
+   
+    .svg{
+        display: none;
+    }
+    .container{
+        width: 80%;
+        position: absolute;
+        transition: left .2s;
+        display: grid;
+        grid-template-columns: 12fr;
+        grid-template-rows: 1fr 4fr 2fr 5fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .container-close{
+       left: -80%;
+    }
+    .hide{
+        display: none;
+    }
 }
-.turnOut{
-    transition: all ease .2s;
-    transform: rotate(0deg);
-}
-.close-options{
-    display:none;
-} */

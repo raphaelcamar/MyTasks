@@ -1,23 +1,31 @@
-<div class="container" >
-    <div class="header-sideBar">
-        <div class="title">MyTasks</div>
-        <!-- <div class="arrow" (click)="close()"><div class="wrapper-arrow" [ngClass]="(closeTab == false)? 'turn' : 'turnOut'" ><i class="fas fa-chevron-left"></i></div></div> -->
-        <button>Adicionar tarefa</button>
-    </div>
-    
-    <div class="options">
-         <div class="option dashboard" routerLinkActive="selected" routerLink="/infos"> Dashboards</div>
-        <div class="option profile" routerLinkActive="selected" routerLink="/profile"> Meu perfil</div>
-        <div class="option my-tasks" routerLinkActive="selected" routerLink="/tasks"> Minhas tarefas</div>
+<div class="wrapper">
+    <div class="toggle-hide"(click)="openCloseTab()" [ngClass]="(closeTab == false)? 'toggle' : 'cont'">
+        <mat-icon >keyboard_arrow_left</mat-icon>
     </div>
 
-    <!-- <div class="options" [ngClass]="(closeTab == false)? 'close-options' : ''">
-        <div class="option dashboard selected"><i class="fas fa-chart-line"></i></div>
-       <div class="option profile"><i class="fas fa-user"></i></div>
-       <div class="option my-tasks"><i class="fas fa-tasks"></i></div>
-   </div> -->
+    <div class="container" [ngClass]="(closeTab == true) ? 'container-close' : 'container'" [ngClass]="(hide == false)? 'hide' : 'container'">
     
-    <div class="svg">
-        <img src="../../../assets/side-bar.svg" alt="">
+        <div class="header-sideBar">
+            <div class="title">MyTasks</div>
+            <!-- <div class="arrow" (click)="close()"><div class="wrapper-arrow" [ngClass]="(closeTab == false)? 'turn' : 'turnOut'" ><i class="fas fa-chevron-left"></i></div></div> -->
+            <button><mat-icon>add</mat-icon>Adicionar tarefa</button>
+        </div>
+        
+        <div class="options">
+             <div class="option dashboard" routerLinkActive="selected" routerLink="/infos"><mat-icon class="icon">dashboard</mat-icon> Dashboards</div>
+            <div class="option profile" routerLinkActive="selected" routerLink="/profile"><mat-icon class="icon">manage_accounts</mat-icon> Meu perfil</div>
+            <div class="option my-tasks" routerLinkActive="selected" routerLink="/tasks"><mat-icon class="icon">fact_check</mat-icon> Minhas tarefas</div>
+        </div>
+    
+        <!-- <div class="options" [ngClass]="(closeTab == false)? 'close-options' : ''">
+            <div class="option dashboard selected"><i class="fas fa-chart-line"></i></div>
+           <div class="option profile"><i class="fas fa-user"></i></div>
+           <div class="option my-tasks"><i class="fas fa-tasks"></i></div>
+       </div> -->
+        
+        <div class="svg">
+            <img src="../../../assets/side-bar.svg" alt="">
+        </div>
     </div>
+    
 </div>

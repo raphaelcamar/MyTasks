@@ -2,13 +2,12 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-flow: wrap;
 }
 .wrapper-card{
     width: 20%;
     background: #FFF;
-    /* padding-top: 2.50rem; */
     padding-bottom: 2.50rem;
-   
 }
 .card{
     width: 90%;
@@ -19,27 +18,26 @@
     font-size: 1.10rem;
     padding: 1.15rem 0;   
 }
-.icon{
+
+.mat-icon{
+    font-size: 2.25rem;
     width: 3.55rem;
-    height: 3.55rem;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .number-icon{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
+    justify-self : center;
 }
 .number, i{
     font-size: 2.50rem;
 }
 .finished{
-    background-color: #33C58B
+    color: #33C58B;
 }
 .progress{
-    background-color: #3F51B5
+    color: #3F51B5;
 }
 .progress > i, .not-started > i{
     font-size: 2rem;
@@ -48,8 +46,14 @@
     color: #FFF;
 }
 .cancelled{
-    background-color: #E8505B;
+    color: #E8505B;
 }
 .not-started{
-    background: #EFA94E;
+    color: #EFA94E;
+}
+@media(max-width:1200px){
+    .container{
+        display:flex;
+        flex-direction: column;
+    }
 }

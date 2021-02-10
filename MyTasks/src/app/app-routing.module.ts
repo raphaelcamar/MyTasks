@@ -19,6 +19,7 @@ import { Tasks } from './models/tasks.model';
 const routes: Routes = [
   {path : '', component : LoginComponent},
   {path : 'infos', component : InfosComponent},
+  {path : 'sidebar', component : SidebarComponent},
   {path : 'profile', component : ProfileComponent},
   {path : 'tasks', component : TasksComponent},
   {path : 'update/:id', component :  UpdateComponent},

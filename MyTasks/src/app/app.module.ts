@@ -44,6 +44,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { ChartsModule } from 'ng2-charts';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     MatTooltipModule,
     MatSortModule,
     ChartsModule,
+    NgbModule,
   ],
   providers: [
     // { provide : LOCALE_ID, useValue : 'pt-BR'},

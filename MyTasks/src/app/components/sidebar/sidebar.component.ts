@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 // import {faUser, faChartLine, faTasks, faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -15,14 +15,21 @@ export class SidebarComponent implements OnInit {
 
   constructor() { }
 
-  closeTab : boolean
+  closeTab : boolean;
+  hide : boolean;
+  @Input() isHiding : boolean
 
   ngOnInit(): void {
     this.closeTab = false;
+    this.hide = false;
+    console.log(this.isHiding);
   }
 
-  // close(){
-  //   this.closeTab = !this.closeTab;
-  // }
+  openCloseTab(){
+    this.closeTab = !this.closeTab;
+    setTimeout(()=>{
+      this.hide = !this.hide
+    }, 200)
+  }
 
 }
