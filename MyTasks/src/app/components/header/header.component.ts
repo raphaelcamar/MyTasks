@@ -29,17 +29,7 @@ export class HeaderComponent implements OnInit {
     return this.headerService.headerData.routeUrl
   }
 
-  get isLogged():boolean{
-    return this.headerService.headerData.isLogged
-  }
 
-  get logout():boolean{
-   return this.headerService.headerData.logout
-  }
-
-  get adm():boolean{
-    return this.headerService.headerData.isAdm
-  }
 
   logoutUser():void{
     localStorage.clear();

@@ -9,6 +9,7 @@ import { DeleteComponent } from './components/tasks/delete/delete.component';
 import { MonthTasksComponent } from './components/tasks/month-tasks/month-tasks.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { UpdateComponent } from './components/tasks/update/update.component';
+import { DashboardsComponent } from './components/user/dashboards/dashboards.component';
 import { InfosComponent } from './components/user/infos/infos.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path : 'page', component : DefaultComponent, children : [
     {path : 'tasks', component : InfosComponent },
     // {path : 'dashboards', component : }
-    {path : 'profile', component : ProfileComponent}
+    {path : 'profile', component : ProfileComponent},
+    {path : 'dashboards', component : DashboardsComponent}
   ]
 }];
 

@@ -12,9 +12,7 @@ export class HeaderService {
     title : '',
     nameUser : '',
     routeUrl : '',
-    isLogged : false,
-    logout : true,
-    isAdm : false
+
   })
 
   constructor() {}

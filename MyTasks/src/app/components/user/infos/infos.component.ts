@@ -31,7 +31,7 @@ export class InfosComponent implements OnInit {
   constructor(private taskService : TasksService, private tableService : TableService, private cardService : CardService) {}
 
   ngOnInit(): void {
-   this.user = sessionStorage.getItem == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
+   this.user = sessionStorage.getItem('logged') == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
    
    this.taskService.read(this.user.id).subscribe(response =>{
      this.tableService.TableData = response;
