@@ -10,6 +10,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 // import { HeaderComponent } from '../components/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { TableComponent } from '../components/table/table.component';
+import {MatTableModule} from '@angular/material/table'
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -19,7 +22,8 @@ import {MatMenuModule} from '@angular/material/menu';
     HeaderComponent, 
     InfosComponent, 
     CardComponent,
-    SidebarComponent
+    SidebarComponent,
+    TableComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +31,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
+    MatTableModule,
+    MatButtonModule,
   ]
 })
 export class DefaultModule { }

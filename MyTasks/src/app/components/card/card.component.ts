@@ -16,83 +16,28 @@ export class CardComponent implements OnInit {
   // faCheck = faCheck;
   // faTimes = faTimes;
   // faPause = faPause;
-
-  arrJan : Tasks[] = [];
-  arrFeb : Tasks[] = [];
-  arrMar : Tasks[] = [];
-  arrApr : Tasks[] = [];
-  arrMay : Tasks[] = [];
-  arrJun : Tasks[] = [];
-  arrJul : Tasks[] = [];
-  arrAug : Tasks[] = [];
-  arrSep : Tasks[] = [];
-  arrOct : Tasks[] = [];
-  arrNov : Tasks[] = [];
-  arrDec : Tasks[] = [];
+  naoIniciado : number = 0;
+  finalizado : number = 0;
+  emProcesso : number = 0;
+  cancelado: number = 0;
 
   constructor(private cardService : CardService, private router : Router) { }
 
   ngOnInit(): void {
 
     setTimeout(()=>{
-      this.getValuesAndSeparateByMonth();
+
+      this.cardService.cardData.filter(item => item.isFinished == 'Não iniciado' ? this.naoIniciado +=1 : '')
+      this.cardService.cardData.filter(item => item.isFinished == 'Finalizado' ? this.finalizado +=1 : '')
+      this.cardService.cardData.filter(item => item.isFinished == 'Em processo' ? this.naoIniciado +=1 : '')
+      this.cardService.cardData.filter(item => item.isFinished == 'Cancelado' ? this.naoIniciado +=1 : '')
+
     }, 1000 )
   }
 
-  getValuesAndSeparateByMonth(){
-    this.cardService.cardData.forEach(item =>{
-      let data = new Date(item.data).getMonth() + 1;
-      if(data == 1){
-        this.arrJan.push(item)
-      }
 
-      if(data == 2){
-        this.arrFeb.push(item)
-      }
 
-      if(data == 3){
-        this.arrMar.push(item)
-      }
-
-      if(data == 4){
-        this.arrApr.push(item)
-      }
-
-      if(data == 5){
-        this.arrMay.push(item)
-      }
-
-      if(data == 6){
-        this.arrJun.push(item)
-      }
-
-      if(data == 7){
-        this.arrJul.push(item)
-      }
-
-      if(data == 8){
-        this.arrAug.push(item)
-      }
-
-      if(data == 9){
-        this.arrSep.push(item)
-      }
-
-      if(data == 10){
-        this.arrOct.push(item)
-      }
-
-      if(data == 11){
-        this.arrNov.push(item)
-      }
-
-      if(data == 12){
-        this.arrDec.push(item)
-      }
-    })
-  }
-
-  sendData(tasks : Tasks[], month : number):void{
-    this.router.navigate(['/users/tasks/month/1'])
-  }
+  // sendData(tasks : Tasks[], month : number):void{
+  //   this.router.navigate(['/users/tasks/month/1'])
+  // }
 }

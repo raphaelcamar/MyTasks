@@ -20,7 +20,6 @@ export class TableComponent implements OnInit {
     this.displayedColumns = ['name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
     setTimeout(()=>{
       this.dataSource = this.tableService.TableData
-      console.log(this.tableService.TableData)
     }, 1000)
   }
 

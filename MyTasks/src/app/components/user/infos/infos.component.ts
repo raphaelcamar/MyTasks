@@ -9,6 +9,7 @@ import { changeName } from 'src/helpers/changeName';
 import { validations } from 'src/helpers/validation';
 import { CardService } from '../../card/card.service';
 import { HeaderService } from '../../header/header.service';
+import { TableService } from '../../table/table.service';
 
 @Component({
   selector: 'app-infos',
@@ -26,12 +27,16 @@ export class InfosComponent implements OnInit {
   user : User;
   tasks : Tasks[];
   hide : boolean = true;
-  
 
-  constructor(private userService : UserService) {}
+  constructor(private taskService : TasksService, private tableService : TableService, private cardService : CardService) {}
 
   ngOnInit(): void {
-    
+   this.user = sessionStorage.getItem == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
+   
+   this.taskService.read(this.user.id).subscribe(response =>{
+     this.tableService.TableData = response;
+     this.cardService.cardData = response
+   });
 
   }
 }

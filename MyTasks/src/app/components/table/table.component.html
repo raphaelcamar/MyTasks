@@ -37,12 +37,12 @@
 
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef> Editar </th>
-      <td mat-cell *matCellDef="let task"><button mat-button class="edit" (click)="openDialogUpdate(task.id)">Editar</button></td>
+      <td mat-cell *matCellDef="let task"><button class="edit" (click)="openDialogUpdate(task.id)">Editar</button></td>
     </ng-container>
 
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef> Deletar </th>
-      <td mat-cell *matCellDef="let task"><button mat-button color="warn" (click)="openDialogDelete(task.id)">Deletar</button></td>
+      <td mat-cell *matCellDef="let task"><button class="warn" (click)="openDialogDelete(task.id)">Deletar</button></td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

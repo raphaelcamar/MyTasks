@@ -15,7 +15,7 @@ import { UpdateComponent } from './components/tasks/update/update.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
+// import { MatTableModule } from '@angular/material/table';
 import { DeleteComponent } from './components/tasks/delete/delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { SubscribeComponent } from './components/user/subscribe/subscribe.component';
@@ -32,7 +32,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-import { TableComponent } from './components/table/table.component';
 import { MonthTasksComponent } from './components/tasks/month-tasks/month-tasks.component';
 import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -51,14 +50,12 @@ import { DefaultModule } from './default/default.module';
   declarations: [
     AppComponent,
     TasksComponent,
- 
     UpdateComponent,
     DeleteComponent,
     LoginComponent,
     SubscribeComponent,
     LandingComponent,
     MonthTasksComponent,
-    TableComponent,
     AddTaskComponent,
     ButtonAddTaskComponent,
   ],
@@ -70,8 +67,6 @@ import { DefaultModule } from './default/default.module';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
-    MatTableModule,
     MatMenuModule,
     MatIconModule,  
     MatSnackBarModule,

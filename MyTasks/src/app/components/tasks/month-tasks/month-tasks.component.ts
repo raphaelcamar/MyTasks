@@ -36,7 +36,6 @@ export class MonthTasksComponent implements OnInit {
     this.month = changeDate.ReturningNameMonthByNumber(this.monthNumber);
     let user = JSON.parse(localStorage.getItem('logged'));
     this.tasksService.getTasksByMonthAndIdUser(user.id, this.monthNumber).subscribe(resp =>{
-      console.log(resp)
       this.tasks = resp;
       this.dataSource = resp;
       this.tableService.TableData = resp;

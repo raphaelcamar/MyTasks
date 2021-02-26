@@ -13,8 +13,27 @@ th{
     font-size: 15px;
     text-transform: uppercase;
 }
-
+button{
+    color: #ffffff;
+    padding: 0.50rem 0.90rem;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    border-style: none;
+}
 .edit{
-    color: #33c58b;
+    background-color: #33c58b;
+}
+.warn{
+    background-color: #EF4E59;
+}
+.edit:hover{
+    background-color: #2fb17d;
+}
+.warn:hover{
+    background-color: #dd434e;;
+}
+button:active{
+    transform: scale(0.9);
 }
   
