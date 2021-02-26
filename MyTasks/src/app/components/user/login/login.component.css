@@ -225,6 +225,7 @@ button:active{
     }
     .wrapper-login{
         margin-bottom: 1.95rem;
+        width: 90%;
     }
     .title-login{
         margin-top: 3rem;
