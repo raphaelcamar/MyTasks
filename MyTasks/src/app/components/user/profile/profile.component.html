@@ -1,0 +1,36 @@
+<div class="container">
+    <form class="wrapper" [formGroup]="formulary">
+        <div class="pic"><img src="" alt=""></div>
+        <div class="wrapper-infos">
+            <div class="input-form">
+                <label for="name">Nome completo</label>
+                <input formControlName="name" type="text" name="name" id="name">
+            </div>
+            <div class="wrapper-inputs">
+                <div class="input-form">
+                    <label for="password">Senha</label>
+                    <input formControlName="password" type="password" name="password" id="password">
+                </div>
+                <div class="input-form">
+                    <label for="cpf">CPF</label>
+                    <input formControlName="cpf" name="cpf" placeholder="cpf" id="cpf">
+                </div>
+            </div>
+            <div class="input-form">
+                <label for="email">E-mail</label>
+                <input formControlName="email" type="email" name="email" id="email">
+            </div>
+            <!-- <div class="wrapper-inputs">
+                <div class="input-form">
+                    <label for="dNasc">Data de nascimento</label>
+                    <input type="date" name="dNasc" id="dNasc" value="">
+                </div>
+                <div class="input-form">
+                    <label for="genre">Gênero</label>
+                    <input type="text" name="genre" id="genre" formControlName="isAdm">
+                </div>
+            </div> -->
+        </div>
+        <button (click)="update()">Atualizar</button>
+    </form>
+</div>

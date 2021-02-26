@@ -41,6 +41,7 @@ import { ChartsModule } from 'ng2-charts';
 // import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DefaultModule } from './default/default.module';
+import { ProfileComponent } from './components/user/profile/profile.component';
 // import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { DashboardComponent } from './modules/dashboard/dashboard.component';
 // import { DefaultModule } from './layouts/default/default.module';
@@ -58,6 +59,7 @@ import { DefaultModule } from './default/default.module';
     MonthTasksComponent,
     AddTaskComponent,
     ButtonAddTaskComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

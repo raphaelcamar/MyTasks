@@ -6,6 +6,7 @@ import { User } from 'src/app/models/user.model';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
 import { changeName } from 'src/helpers/changeName';
 import { validations } from 'src/helpers/validation';
+import { CardService } from '../../card/card.service';
 import { HeaderService } from '../../header/header.service';
 import { TableService } from '../../table/table.service';
 import { TasksComponent } from '../tasks.component';
@@ -26,7 +27,7 @@ export class AddTaskComponent implements OnInit {
   dataSource : Tasks[];
   buttonStyle : any
 
-  constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder) { 
+  constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder, private cardService : CardService) { 
 
   this.user = JSON.parse(localStorage.getItem('logged'));
     
@@ -46,13 +47,13 @@ export class AddTaskComponent implements OnInit {
   }
 
   addTask(){
-    console.log('Entrou aqui')
     const id = this.tasks.idUser;
     this.tasks = this.formulary.value;
     this.tasks.idUser = id;
     this.taskService.create(this.tasks)
     .subscribe(resp =>{
-      this.taskService.message('Tarefa criada com sucesso!')
+      this.taskService.message('Tarefa criada com sucesso!');
+      // this.cardService.cardData
     }) 
   }
 

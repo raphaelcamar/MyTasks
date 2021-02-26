@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           localStorage.clear();
           sessionStorage.setItem('logged', JSON.stringify(resp[0]));
         }
-          this.router.navigate(['infos']);
+          this.router.navigate(['/page/tasks']);
       }   
     })
   }

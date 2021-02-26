@@ -11,6 +11,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { UpdateComponent } from './components/tasks/update/update.component';
 import { InfosComponent } from './components/user/infos/infos.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 import { SubscribeComponent } from './components/user/subscribe/subscribe.component';
 import { DefaultComponent } from './default/default.component';
 import { AuthGuardService } from './guards/auth-guard.service';
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path : 'page', component : DefaultComponent, children : [
     {path : 'tasks', component : InfosComponent },
     // {path : 'dashboards', component : }
-    {path : 'profile', component : InfosComponent}
+    {path : 'profile', component : ProfileComponent}
   ]
 }];
 
