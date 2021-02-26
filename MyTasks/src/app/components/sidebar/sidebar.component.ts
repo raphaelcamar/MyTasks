@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 // import {faUser, faChartLine, faTasks, faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -17,19 +17,16 @@ export class SidebarComponent implements OnInit {
 
   closeTab : boolean;
   hide : boolean;
-  @Input() isHiding : boolean
+  @Output() titleHeader = new EventEmitter();
+ 
 
   ngOnInit(): void {
-    this.closeTab = false;
-    this.hide = false;
-    console.log(this.isHiding);
+    this.changeTitle('Minhas tarefas')
   }
 
-  openCloseTab(){
-    this.closeTab = !this.closeTab;
-    setTimeout(()=>{
-      this.hide = !this.hide
-    }, 200)
+
+  changeTitle(title){
+    this.titleHeader.emit(title);
   }
 
 }

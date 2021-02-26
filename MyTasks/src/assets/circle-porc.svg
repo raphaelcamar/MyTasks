@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="251.117" height="251.117" viewBox="0 0 251.117 251.117">
+  <defs>
+    <filter id="bottom-shadow" x="32.059" y="31.058" width="193" height="193" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_907" data-name="Grupo 907" transform="translate(34.559 -724.442)">
+    <g transform="matrix(1, 0, 0, 1, -34.56, 724.44)" filter="url(#bottom-shadow)">
+      <g id="bottom-shadow-2" data-name="bottom-shadow" transform="translate(36.56 36.56)" fill="none" stroke="#3469ae" stroke-linecap="round" stroke-width="10" stroke-dasharray="300 0">
+        <circle cx="89" cy="89" r="89" stroke="none"/>
+        <circle cx="89" cy="89" r="84" fill="none"/>
+      </g>
+    </g>
+    <g id="blue-_glow" data-name="blue- glow" transform="translate(82.22 724.442) rotate(41)" fill="none" stroke="#33c58b" stroke-linecap="round" stroke-width="10" stroke-dasharray="300 200">
+      <circle cx="89" cy="89" r="89" stroke="none"/>
+      <circle cx="89" cy="89" r="84" fill="none"/>
+    </g>
+  </g>
+</svg>

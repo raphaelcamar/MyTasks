@@ -8,6 +8,7 @@
     width: 20%;
     background: #FFF;
     padding-bottom: 2.50rem;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.31);
 }
 .card{
     width: 90%;

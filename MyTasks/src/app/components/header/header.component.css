@@ -1,7 +1,5 @@
 .container{
-    background: #006FFE;
-    width: 100%;
-    
+    background: #006FFE; 
 }
 .wrapper{
     width: 90%;
@@ -35,8 +33,22 @@
 .name{
     color: #FFF;
 }
-.gamb{
-    display: none;
+.menu{
+    color: #FFF;
+}
+.menu:hover{
+    cursor: pointer;
+}
+.options{
+   display: flex;
+   align-self: center;
+   border-radius: 50px;
+   margin-left: 1.05rem;
+   color: white;
+}
+.options:hover{
+    background-color: #005dd6; 
+    cursor: pointer;
 }
 @media(max-width: 1200px){
 

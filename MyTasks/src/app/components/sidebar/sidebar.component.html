@@ -1,9 +1,9 @@
 <div class="wrapper">
-    <div class="toggle-hide"(click)="openCloseTab()" [ngClass]="(closeTab == false)? 'toggle' : 'cont'">
+    <!-- <div class="toggle-hide">
         <mat-icon >keyboard_arrow_left</mat-icon>
-    </div>
+    </div> -->
 
-    <div class="container" [ngClass]="(closeTab == true) ? 'container-close' : 'container'" [ngClass]="(hide == false)? 'hide' : 'container'">
+    <div class="container">
     
         <div class="header-sideBar">
             <div class="title">MyTasks</div>
@@ -12,16 +12,11 @@
         </div>
         
         <div class="options">
-             <div class="option dashboard" routerLinkActive="selected" routerLink="/infos"><mat-icon class="icon">dashboard</mat-icon> Dashboards</div>
-            <div class="option profile" routerLinkActive="selected" routerLink="/profile"><mat-icon class="icon">manage_accounts</mat-icon> Meu perfil</div>
-            <div class="option my-tasks" routerLinkActive="selected" routerLink="/tasks"><mat-icon class="icon">fact_check</mat-icon> Minhas tarefas</div>
+            <div class="option my-tasks" routerLinkActive="selected" (click)="changeTitle('Minhas tarefas')" routerLink="/page/tasks"><mat-icon class="icon">fact_check</mat-icon> Minhas tarefas</div>
+            <div class="option dashboard" routerLinkActive="selected" (click)="changeTitle('Dashboards')" routerLink="/page/dashboards"><mat-icon class="icon">dashboard</mat-icon> Dashboards</div>
+            <div class="option profile" routerLinkActive="selected" (click)= "changeTitle('Meu perfil')" routerLink="/page/profile"><mat-icon class="icon">manage_accounts</mat-icon> Meu perfil</div>
         </div>
-    
-        <!-- <div class="options" [ngClass]="(closeTab == false)? 'close-options' : ''">
-            <div class="option dashboard selected"><i class="fas fa-chart-line"></i></div>
-           <div class="option profile"><i class="fas fa-user"></i></div>
-           <div class="option my-tasks"><i class="fas fa-tasks"></i></div>
-       </div> -->
+
         
         <div class="svg">
             <img src="../../../assets/side-bar.svg" alt="">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderService } from './header.service';
 
@@ -8,6 +8,8 @@ import { HeaderService } from './header.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() toggleSideBarForMe : EventEmitter<any> = new EventEmitter();
 
   constructor(private headerService : HeaderService, private router : Router) { }
 
@@ -41,6 +43,11 @@ export class HeaderComponent implements OnInit {
 
   logoutUser():void{
     localStorage.clear();
+    sessionStorage.clear();
     this.router.navigate(['/'])
+  }
+
+  toggleSideBar(){
+    this.toggleSideBarForMe.emit();
   }
 }

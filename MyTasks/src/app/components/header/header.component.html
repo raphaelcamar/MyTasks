@@ -1,11 +1,18 @@
 <div class="container">
     <div class="wrapper">
-        <div class="gamb"></div>
-        <div class="title">Dashboards</div>
+        <div class="menu" (click)="toggleSideBar()"><mat-icon>menu</mat-icon></div>
+        <div class="title">{{title}}</div>
         <div class="options-user">
             
                 <div class="photo"></div>
-                <div class="name">Raphael</div>
+                <div class="name">{{nameUser}}</div>
+                <div class="options">
+                    <mat-icon [matMenuTriggerFor]="menu">keyboard_arrow_down</mat-icon>
+                </div>
+                  
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <div class="logout" mat-menu-item (click)="logoutUser()">Logout</div>
+                  </mat-menu>
         </div>
     </div>
 </div>

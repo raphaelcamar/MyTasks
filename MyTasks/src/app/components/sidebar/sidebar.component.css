@@ -141,7 +141,6 @@ button:active{
     left: 200px;
 }
 .container-close{
-    
     left: -100%;
     transition: left ease-in .2s;
 }
@@ -150,32 +149,5 @@ button:active{
 }
 @media(max-width: 1200px){
 
-    .toggle-hide{
-        left: 385px;
-    }
-    .toggle{
-        padding: .50rem;
-        position: absolute;
-        left: -1px;
-    }
-   
-    .svg{
-        display: none;
-    }
-    .container{
-        width: 80%;
-        position: absolute;
-        transition: left .2s;
-        display: grid;
-        grid-template-columns: 12fr;
-        grid-template-rows: 1fr 4fr 2fr 5fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-    }
-    .container-close{
-       left: -80%;
-    }
-    .hide{
-        display: none;
-    }
+
 }

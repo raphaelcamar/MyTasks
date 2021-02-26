@@ -7,8 +7,7 @@ import localeBr from '@angular/common/locales/pt';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+// import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,13 +23,11 @@ import { LandingComponent } from './components/landing/landing.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { InfosComponent } from './components/user/infos/infos.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from "@angular/forms";
-import { AdmComponent } from './components/adm/adm.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { CardComponent } from './components/card/card.component';
+// import { CardComponent } from './components/card/card.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
@@ -42,30 +39,28 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ButtonAddTaskComponent } from './components/tasks/button-add-task/button-add-task.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ChartsModule } from 'ng2-charts';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
+// import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DefaultModule } from './default/default.module';
+// import { DashboardComponent } from './components/dashboard/dashboard.component';
+// import { DashboardComponent } from './modules/dashboard/dashboard.component';
+// import { DefaultModule } from './layouts/default/default.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    HeaderComponent,
-    FooterComponent,
+ 
     UpdateComponent,
     DeleteComponent,
     LoginComponent,
     SubscribeComponent,
     LandingComponent,
-    InfosComponent,
-    AdmComponent,
-    CardComponent,
     MonthTasksComponent,
     TableComponent,
     AddTaskComponent,
     ButtonAddTaskComponent,
-    SidebarComponent,
-    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +73,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatButtonModule,
     MatTableModule,
     MatMenuModule,
-    MatIconModule,
+    MatIconModule,  
     MatSnackBarModule,
     MatDialogModule,
     ReactiveFormsModule,
@@ -91,6 +86,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSortModule,
     ChartsModule,
     NgbModule,
+    DefaultModule
   ],
   providers: [
     // { provide : LOCALE_ID, useValue : 'pt-BR'},
