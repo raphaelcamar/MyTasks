@@ -1,52 +1,48 @@
 <div class="container">
-  
+  <h1>Cadastre sua tarefa!</h1>
 
   <form class="add-task" [formGroup]="formulary" (ngSubmit)="addTask()">
-  
-    <div class="input-form tr">
-      <mat-form-field color="accent" appearance="fill" class="input">
-        <mat-label>Selecione a data</mat-label>
-        <input matInput [matDatepicker]="picker2" formControlName="data" required>
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2 color="primary"></mat-datepicker>
-        <mat-error >A data tem que ser válida</mat-error>
-      </mat-form-field>
-    
-      <mat-form-field appearance="fill" class="input">
-        <mat-label>Processo</mat-label>
-        <mat-select formControlName="isFinished">
-          <mat-option value="Não iniciado" selected>Não iniciado</mat-option>
-          <mat-option value="Finalizado">Finalizado</mat-option>
-          <mat-option value="Em processo">Em processo</mat-option>
-          <mat-option value="Cancelado">Cancelado</mat-option>
-        </mat-select>
-        <mat-error>Não pode ser vazio!</mat-error>
-      </mat-form-field>
-    
-      <mat-form-field appearance="fill" class="input">
-        <mat-label>Importância</mat-label>
-        <mat-select formControlName="importance">
-          <mat-option value="Sem importancia" selected>Sem muita importância</mat-option>
-          <mat-option value="Importante">Importante</mat-option>
-          <mat-option value="Urgente">Urgente</mat-option>
-        </mat-select>
-        <mat-error>Não pode ser vazio!</mat-error>
-      </mat-form-field>
+
+
+    <div class="wrapper-inputs">
+      <div class="input-form">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" formControlName="name" placeholder="Nome" required>
+      </div>
+      
+      <div class="input-form">
+        <label for="description">Descrição</label>
+        <input type="text" name="description" id="description" formControlName="description" placeholder="Descrição" required>
+      </div>
     </div>
 
-    <div class="input-form db">
-      <mat-form-field appearance="fill" color="accent" class="input">
-        <mat-label >Nome</mat-label>
-        <input matInput type="text" formControlName="name" name="name" placeholder="Nome" required>
-        <mat-error >Nome não pode ser vazio, nem conter números ou caracteres especiais</mat-error>
-      </mat-form-field>
-    
-      <mat-form-field appearance="fill" color="accent" class="input">
-        <mat-label >Descrição</mat-label>
-        <input matInput type="text" formControlName="description" name="description" placeholder="Descrição" required/>
-        <mat-error >Descrição não pode ser vazio, nem conter números ou caracteres especiais</mat-error>
-      </mat-form-field>
+    <div class="wrapper-inputs">
+      <div class="input-form">
+        <label for="data">Selecione a data</label>
+        <input type="date" formControlName="data" required name="data" id="data">
+      </div>
+      
+      <div class="input-form">
+        <label for="isFinished">Selecione a condição</label>
+        <select name="isFinished" id="isFinished">
+          <option value="Não iniciado">Não iniciado</option>
+          <option value="Finalizado">Finalizado</option>
+          <option value="Em processo">Em processo</option>
+          <option value="Cancelado">Cancelado</option>
+        </select>
+      </div>
     </div>
-    <button mat-raised-button  class="button" [disabled]="!formulary.valid" color="primary">Cadastrar</button>
+      
+      <div class="input-form">
+        <label for="importance">Importância</label>
+        <select type="text" name="importance" id="importance" formControlName="importance">
+          <option value="Sem importancia" selected>Sem muita importância</option>
+          <option value="Importante">Importante</option>
+          <option value="Urgente">Urgente</option>
+        </select>
+      </div>
+
+    <button class="button"  color="primary">Cadastrar</button>
   </form>
 </div>
+<!-- [disabled]="!formulary.valid" -->

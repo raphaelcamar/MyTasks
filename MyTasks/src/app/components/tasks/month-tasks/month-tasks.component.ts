@@ -61,11 +61,8 @@ export class MonthTasksComponent implements OnInit {
     })
 
     this.headerService.headerData = {
-      isAdm : this.user.isAdm,
-      isLogged : true,
       nameUser : changeName.firstName(this.user.name),
       title : 'Tarefas Mensais',
-      logout : true,
       routeUrl : ''
     }
 

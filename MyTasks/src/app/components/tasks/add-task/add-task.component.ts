@@ -27,22 +27,23 @@ export class AddTaskComponent implements OnInit {
   dataSource : Tasks[];
   buttonStyle : any
 
-  constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder, private cardService : CardService) { 
+  constructor(private taskService : TasksService, private dialog : MatDialog, private fb : FormBuilder, private cardService : CardService, private table : TableService) { 
 
   this.user = JSON.parse(localStorage.getItem('logged'));
     
   }
 
   ngOnInit(): void {
-  this.user = JSON.parse(localStorage.getItem('logged'));
+    this.user = sessionStorage.getItem('logged') == null  ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
 
-  const {id} = this.user;
 
-  this.tasks = new Tasks();
-  
-  this.tasks.idUser = id;
+    const {id} = this.user;
 
-  this.formValidation();
+    this.tasks = new Tasks();
+    
+    this.tasks.idUser = id;
+
+    this.formValidation();
 
   }
 
@@ -53,7 +54,7 @@ export class AddTaskComponent implements OnInit {
     this.taskService.create(this.tasks)
     .subscribe(resp =>{
       this.taskService.message('Tarefa criada com sucesso!');
-      // this.cardService.cardData
+      // this.table.updateTable();
     }) 
   }
 

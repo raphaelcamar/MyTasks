@@ -26,11 +26,10 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
 
     setTimeout(()=>{
-
       this.cardService.cardData.filter(item => item.isFinished == 'Não iniciado' ? this.naoIniciado +=1 : '')
       this.cardService.cardData.filter(item => item.isFinished == 'Finalizado' ? this.finalizado +=1 : '')
-      this.cardService.cardData.filter(item => item.isFinished == 'Em processo' ? this.naoIniciado +=1 : '')
-      this.cardService.cardData.filter(item => item.isFinished == 'Cancelado' ? this.naoIniciado +=1 : '')
+      this.cardService.cardData.filter(item => item.isFinished == 'Em processo' ? this.emProcesso +=1 : '')
+      this.cardService.cardData.filter(item => item.isFinished == 'Cancelado' ? this.cancelado +=1 : '')
 
     }, 1000 )
   }

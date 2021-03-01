@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTaskComponent } from '../tasks/add-task/add-task.component';
 // import {faUser, faChartLine, faTasks, faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -13,7 +15,7 @@ export class SidebarComponent implements OnInit {
   // faTasks = faTasks;
   // faPlus = faPlus;
 
-  constructor() { }
+  constructor(private dialog : MatDialog) { }
 
   closeTab : boolean;
   hide : boolean;
@@ -27,6 +29,12 @@ export class SidebarComponent implements OnInit {
 
   changeTitle(title){
     this.titleHeader.emit(title);
+  }
+
+  openDialogAdd(){
+    this.dialog.open(AddTaskComponent, {
+
+    });
   }
 
 }
