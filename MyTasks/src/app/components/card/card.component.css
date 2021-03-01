@@ -55,6 +55,10 @@
 @media(max-width:1200px){
     .container{
         display:flex;
-        flex-direction: column;
+        flex-direction: column !important;
+    }
+    .wrapper-card{
+        width: 100%;
+        margin: 2rem auto;
     }
 }

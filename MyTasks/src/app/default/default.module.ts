@@ -13,6 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { TableComponent } from '../components/table/table.component';
 import {MatTableModule} from '@angular/material/table'
 import { MatButtonModule } from '@angular/material/button';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -33,6 +34,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatMenuModule,
     MatTableModule,
     MatButtonModule,
+    ChartsModule,
   ]
 })
 export class DefaultModule { }

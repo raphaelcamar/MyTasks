@@ -1,6 +1,6 @@
 
-  <mat-drawer-container class="container" hasBackdrop="false">
-    <mat-drawer class="sidebar" #drawer mode="side" [opened]="sideBarOpen">
+  <mat-drawer-container class="container" [hasBackdrop]="hasBackdrop">
+    <mat-drawer class="sidebar" #drawer [mode]="mode" [opened]="sideBarOpen" >
       <app-sidebar (titleHeader)="catchTitle($event)"></app-sidebar>
     </mat-drawer>
     

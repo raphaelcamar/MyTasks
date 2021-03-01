@@ -22,7 +22,7 @@ export class DeleteComponent implements OnInit {
    }
    
   ngOnInit(): void {
-    const {id} = JSON.parse(localStorage.getItem('logged'));
+    const {id} = JSON.parse(localStorage.getItem('logged')) == null ? JSON.parse(sessionStorage.getItem('logged')) : JSON.parse(localStorage.getItem('logged'));
     this.taskService.readById(id)
     .subscribe(resp =>{
       this.tasks = resp

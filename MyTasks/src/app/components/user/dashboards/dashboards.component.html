@@ -1,1 +1,26 @@
-<p>dashboards works!</p>
+<div class="container">
+    <div class="wrapper-chart">
+        <div class="chart">
+            <canvas baseChart
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              [options]="pieChartOptions"
+              [colors]="pieChartColors"
+              [legend]="pieChartLegend">
+            </canvas>
+          </div>
+    </div>
+
+    <div class="wrapper-chart column">
+        <div class="chart">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+    </div>
+</div>

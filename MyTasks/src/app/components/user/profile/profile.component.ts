@@ -17,7 +17,8 @@ export class ProfileComponent implements OnInit {
   constructor(private fb : FormBuilder, private userService : UserService) { }
 
   ngOnInit(): void {
-    this.user = sessionStorage.getItem == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
+    
+    this.user = sessionStorage.getItem('logged') == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
     this.formValidation();
   }
 

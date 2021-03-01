@@ -13,11 +13,14 @@ export class DefaultComponent implements OnInit {
   sideBarOpen : boolean = false;
   titleHeader : string;
   user : User;
+  mode : string
+  hasBackdrop : string;
 
   constructor(public headerService : HeaderService) {}
 
    
   ngOnInit(): void {
+    this.mode = 'side';
     this.user = sessionStorage.getItem('logged') == null  ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
 
     this.headerService.headerData = {
@@ -25,7 +28,16 @@ export class DefaultComponent implements OnInit {
       routeUrl : '',
       title : ''
     }
+
+    this.listener();
     
+  }
+
+  listener(){
+      if(window.outerWidth < 1200){
+        this.mode = 'over'
+        this.hasBackdrop = 'true'
+      }
   }
 
   sideBarToggler(){

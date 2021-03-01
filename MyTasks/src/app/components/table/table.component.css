@@ -14,26 +14,28 @@ th{
     text-transform: uppercase;
 }
 button{
-    color: #ffffff;
+    /* color: #ffffff;
     padding: 0.50rem 0.90rem;
     border-radius: 3px;
     cursor: pointer;
     outline: none;
-    border-style: none;
+    border-style: none; */
 }
 .edit{
-    background-color: #33c58b;
+    color: #33c58b;
+    border-radius: 50px;
 }
 .warn{
-    background-color: #EF4E59;
+    color: #EF4E59;
 }
-.edit:hover{
-    background-color: #2fb17d;
-}
-.warn:hover{
-    background-color: #dd434e;;
+.edit:hover, .warn:hover{
+    background-color: rgb(236, 236, 236);
 }
 button:active{
     transform: scale(0.9);
 }
-  
+@media(max-width : 1200px){
+    table{
+        overflow: auto;
+    }
+}
