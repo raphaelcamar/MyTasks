@@ -22,9 +22,9 @@ export class DefaultComponent implements OnInit {
   ngOnInit(): void {
     this.mode = 'side';
     this.user = sessionStorage.getItem('logged') == null  ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
-
+    const name = this.user.name.split(' ')
     this.headerService.headerData = {
-      nameUser : this.user.name,
+      nameUser : name[0],
       routeUrl : '',
       title : ''
     }

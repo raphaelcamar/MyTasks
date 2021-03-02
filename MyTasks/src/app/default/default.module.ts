@@ -11,10 +11,11 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 // import { HeaderComponent } from '../components/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { TableComponent } from '../components/table/table.component';
-import {MatTableModule} from '@angular/material/table'
+import {MatTableModule} from '@angular/material/table/';
 import { MatButtonModule } from '@angular/material/button';
 import { ChartsModule } from 'ng2-charts';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 
 @NgModule({
@@ -35,6 +36,8 @@ import { ChartsModule } from 'ng2-charts';
     MatTableModule,
     MatButtonModule,
     ChartsModule,
+    MatPaginatorModule,
+    MatSortModule,
   ]
 })
 export class DefaultModule { }
