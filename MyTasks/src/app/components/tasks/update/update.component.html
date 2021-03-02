@@ -1,50 +1,42 @@
-<div class="container add-task">
-  
-    <mat-form-field appearance="fill" >
-      <mat-label >Nome</mat-label>
-      <input matInput type="text" [(ngModel)]="tasks.name" name="name" placeholder="Nome" >
-      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-      <mat-error>Nome não pode ser vazio</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Descrição</mat-label>
-      <input matInput type="text" [(ngModel)]="tasks.description" name="description" placeholder="Descrição" />
-      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-      <mat-error>Descrição não pode ser vazio</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field color="accent" appearance="fill">
-      <mat-label>Selecione a data</mat-label>
-      <input matInput [matDatepicker]="picker2" [(ngModel)]="tasks.data" required>
-      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-      <mat-datepicker #picker2 color="primary"></mat-datepicker>
-      <mat-error >A data tem que ser válida</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Processo</mat-label>
-      <mat-select [(ngModel)]="tasks.isFinished">
-        <mat-option value="Não iniciado" selected>Não iniciado</mat-option>
-        <mat-option value="Finalizado">Finalizado</mat-option>
-        <mat-option value="Em processo">Em processo</mat-option>
-        <mat-option value="Cancelado">Cancelado</mat-option>
-      </mat-select>
-      <mat-error>Não pode ser vazio!</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Importância</mat-label>
-      <mat-select [(ngModel)]="tasks.importance">
-        <mat-option value="Sem importancia" >Sem muita importância</mat-option>
-        <mat-option value="Importante" selected>Importante</mat-option>
-        <mat-option value="Urgente">Urgente</mat-option>
-      </mat-select>
-      <mat-error>Não pode ser vazio!</mat-error>
-    </mat-form-field>
+<div class="container">
+  <h1>Atualizar tarefa</h1>
+
+  <div class="add-task">
+
+    <div class="wrapper-inputs">
+      <div class="input-form">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" [(ngModel)]="tasks.name" placeholder="Nome" >
+      </div>
+      
+      <div class="input-form">
+        <label for="importance">Importância</label>
+        <input type="text" [(ngModel)]="tasks.importance" name="importance" placeholder="Importância" />
+      </div>
+
+    </div>
+
+    <div class="wrapper-inputs">
+      <div class="input-form">
+        <label for="data">Selecione a data</label>
+        <input type="date" [(ngModel)]="tasks.data"  name="data" id="data">
+      </div>
+      
+      <div class="input-form">
+        <label for="isFinished">Selecione a condição</label>
+        <input type="text" [(ngModel)]="tasks.isFinished"  name="isFinished" id="isFinished">
+      </div>
+    </div>
+      
+    <div class="input-form">
+        
+      <label for="description">Descrição</label>
+      <input type="text" name="description" id="description" [(ngModel)]="tasks.description" placeholder="Descrição" >
+    </div>
     
-    <mat-dialog-actions class="dialog">
-      <button mat-dialog-close>Cancel</button>
-      <button cdkFocusInitial (click)="update()" [mat-dialog-close]="tasks">Atualizar</button>
-    </mat-dialog-actions>
-  </div>
+    </div>
+</div>
+  <mat-dialog-actions class="dialog">
+    <button class="close" mat-dialog-close >Cancelar</button>
+    <button class="update" cdkFocusInitial (click)="update()" [mat-dialog-close]="tasks">Atualizar</button>
+  </mat-dialog-actions>
