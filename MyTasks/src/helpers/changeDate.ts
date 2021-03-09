@@ -8,55 +8,12 @@ export class changeDate{
         return `${dia}/${mes}/${ano}`;
     }
 
-    static ReturningNameMonthByNumber(month : string):string{
-      
-
-        if(parseInt(month) == 1){
-            return 'Janeiro'
-          }
-    
-          if(parseInt(month) == 2){
-            return 'Fevereiro'
-          }
-    
-          if(parseInt(month) == 3){
-            return 'Março'
-          }
-    
-          if(parseInt(month) == 4){
-            return 'Abril'
-          }
-    
-          if(parseInt(month) == 5){
-            return 'Maio'
-          }
-    
-          if(parseInt(month) == 6){
-            return 'Junho'
-          }
-    
-          if(parseInt(month) == 7){
-            return 'Julho'
-          }
-    
-          if(parseInt(month) == 8){
-            return 'Agosto'
-          }
-    
-          if(parseInt(month) == 9){
-            return 'Setembro'
-          }
-    
-          if(parseInt(month) == 10){
-            return 'Outubro'
-          }
-    
-          if(parseInt(month) == 11){
-            return 'Novembro'
-          }
-    
-          if(parseInt(month) == 12){
-            return 'Dezembro'
-          }
+    static getDate(){
+        const date = new Date();
+        const dia = date.getDate() < 10 ? '0' + date.getDate().toString() : date.getDate();
+        const mes = date.getMonth() + 1 < 10 ? '0'+ (date.getMonth() + 1).toString() : date.getMonth() + 1;
+        const ano = date.getFullYear();
+        return `${ano}-${mes}-${dia}`;
     }
+
 }

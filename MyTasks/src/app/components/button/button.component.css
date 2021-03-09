@@ -1,0 +1,36 @@
+button{
+    padding: 1rem;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+button:active{
+    transform: scale(0.9);
+}
+.primary:hover{
+    background-color: #2571cf;;
+}
+.primary{
+    background-color: #2680EB;
+}
+.warn{
+    background-color: #EF4E59;
+}
+.warn:hover{
+    background-color: #cc464f;
+}
+.secondary{
+    background-color: #33c58b;
+}
+.secondary:hover{
+    background-color: #30af7c;
+}
+.close{
+    background-color: #686868;
+}
+.close:hover{
+    background-color: #5a5a5a;
+}

@@ -24,7 +24,12 @@
       
       <div class="input-form">
         <label for="isFinished">Selecione a condição</label>
-        <input type="text" [(ngModel)]="tasks.isFinished"  name="isFinished" id="isFinished">
+        <select name="isFinished" id="isFinished" [(ngModel)]="tasks.isFinished">
+          <option value="Não iniciado">Não iniciado</option>
+          <option value="Finalizado">Finalizado</option>
+          <option value="Em processo">Em processo</option>
+          <option value="Cancelado">Cancelado</option>
+        </select>
       </div>
     </div>
       
@@ -37,6 +42,6 @@
     </div>
 </div>
   <mat-dialog-actions class="dialog">
-    <button class="close" mat-dialog-close >Cancelar</button>
-    <button class="update" cdkFocusInitial (click)="update()" [mat-dialog-close]="tasks">Atualizar</button>
+    <app-button text="Cancelar" color="close" mat-dialog-close></app-button>
+    <app-button cdkFocusInitial (click)="update()" [mat-dialog-close]="tasks" text="Atualizar" color="secondary"> </app-button>
   </mat-dialog-actions>

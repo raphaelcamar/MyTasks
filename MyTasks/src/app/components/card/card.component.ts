@@ -12,10 +12,6 @@ import { CardService } from './card.service';
 })
 export class CardComponent implements OnInit {
 
-  // faRedo = faRedo;
-  // faCheck = faCheck;
-  // faTimes = faTimes;
-  // faPause = faPause;
   naoIniciado : number = 0;
   finalizado : number = 0;
   emProcesso : number = 0;
@@ -26,17 +22,15 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
 
     setTimeout(()=>{
-      this.cardService.cardData.filter(item => item.isFinished == 'Não iniciado' ? this.naoIniciado +=1 : '')
-      this.cardService.cardData.filter(item => item.isFinished == 'Finalizado' ? this.finalizado +=1 : '')
-      this.cardService.cardData.filter(item => item.isFinished == 'Em processo' ? this.emProcesso +=1 : '')
-      this.cardService.cardData.filter(item => item.isFinished == 'Cancelado' ? this.cancelado +=1 : '')
+      this.cardService.cardData.filter(item => this.searchItems(item))
 
     }, 1000 )
   }
 
-
-
-  // sendData(tasks : Tasks[], month : number):void{
-  //   this.router.navigate(['/users/tasks/month/1'])
-  // }
+  searchItems(item){
+    item.isFinished == 'Não iniciado' ? this.naoIniciado +=1 : '';
+    item.isFinished == 'Finalizado' ? this.finalizado +=1 : '';
+    item.isFinished == 'Em processo' ? this.emProcesso +=1 : ''
+    item.isFinished == 'Cancelado' ? this.cancelado +=1 : '';
+  }
 }

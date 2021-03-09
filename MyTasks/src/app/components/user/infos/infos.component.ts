@@ -35,8 +35,7 @@ export class InfosComponent implements OnInit {
    
    this.taskService.read(this.user.id).subscribe(response =>{
      this.tableService.TableData = response;
-     this.cardService.cardData = response
+    //  this.cardService.cardData = response
    });
-
   }
 }

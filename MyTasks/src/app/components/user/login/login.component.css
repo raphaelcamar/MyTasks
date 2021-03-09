@@ -8,6 +8,9 @@
     flex-direction: row;
     height: 100vh;
     width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .wrapper-left{
     width: 55%;

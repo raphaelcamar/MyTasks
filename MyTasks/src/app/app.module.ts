@@ -19,7 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { DeleteComponent } from './components/tasks/delete/delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { SubscribeComponent } from './components/user/subscribe/subscribe.component';
-import { LandingComponent } from './components/landing/landing.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -32,7 +31,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-import { MonthTasksComponent } from './components/tasks/month-tasks/month-tasks.component';
 import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ButtonAddTaskComponent } from './components/tasks/button-add-task/button-add-task.component';
@@ -42,7 +40,9 @@ import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DefaultModule } from './default/default.module';
 import { ProfileComponent } from './components/user/profile/profile.component';
-import { DashboardsComponent } from './components/user/dashboards/dashboards.component';
+// import { DashboardsComponent } from './components/user/dashboards/dashboards.component';
+import { ButtonComponent } from './components/button/button.component';
+// import { TruncatePipe } from './pipes/truncate.pipe';
 // import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { DashboardComponent } from './modules/dashboard/dashboard.component';
 // import { DefaultModule } from './layouts/default/default.module';
@@ -56,12 +56,11 @@ import { DashboardsComponent } from './components/user/dashboards/dashboards.com
     DeleteComponent,
     LoginComponent,
     SubscribeComponent,
-    LandingComponent,
-    MonthTasksComponent,
     AddTaskComponent,
     ButtonAddTaskComponent,
     ProfileComponent,
-    DashboardsComponent,
+    ButtonComponent,
+    // TruncatePipe,
   ],
   imports: [
     BrowserModule,

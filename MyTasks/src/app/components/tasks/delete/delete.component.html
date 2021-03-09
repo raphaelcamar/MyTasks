@@ -39,7 +39,7 @@
         </div>
     </div>
     <mat-dialog-actions class="dialog">
-      <button class="close" mat-dialog-close>Cancelar</button>
-      <button class="delete" cdkFocusInitial (click)="delete()" mat-dialog-close>Deletar</button>
+      <app-button mat-dialog-close text="Cancelar" color="close"></app-button>
+      <app-button cdkFocusInitial (click)="delete()" color="warn" text="Deletar"></app-button>
     </mat-dialog-actions>
   

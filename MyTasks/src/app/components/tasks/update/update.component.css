@@ -46,28 +46,7 @@ h1{
     outline: none;
     border-color: #2680EB ;
 }
-button{
-    width: 35%;
-    padding: 1rem;
-    background-color: #E8505B;
-    color: #ffffff;
-    border-style: none;
-    border-radius: 3px;
-    cursor: pointer;
-    outline: none;
+app-button{
     margin-top: 2rem;
-    
-}
-button:hover{
-    background-color: #ca444d;
-}
-button:active{
-    transform: scale(0.9);
-}
-.close{
-    background-color: #686868;
-    margin-right: 2rem;
-}
-.close:hover{
-    background-color: #5a5a5a;
+    width: 35%;
 }

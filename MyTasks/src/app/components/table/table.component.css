@@ -2,10 +2,15 @@
 tr,td,th{
     text-align: center !important;
 }
+.table{
+    overflow: auto;
+}
 table{
     width:100%;
     table-layout: fixed;
     margin-top: 5%;
+    min-width: 1200px;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.31);
 }
 th{
     padding: 20px 15px;

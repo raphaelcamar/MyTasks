@@ -40,22 +40,7 @@
     outline: none;
     border-color: #2680EB ;
 }
-button{
+app-button{
     margin-top: 2rem;
     margin-bottom: 2rem;
-    width: 100%;
-    padding: 1rem;
-    background-color: #2680EB;
-    color: #ffffff;
-    border-style: none;
-    border-radius: 3px;
-    cursor: pointer;
-    outline: none;
-}
-
-button:hover{
-    background-color: #2571cf;;
-}
-button:active{
-    transform: scale(0.9);
 }

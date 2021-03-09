@@ -53,4 +53,13 @@ export class TasksService {
   getAllTasks(): Observable<Tasks[]>{
     return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks`);
   }
+
+  getIsFinished(id : number, type : string): Observable<Tasks[]>{
+    return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks?isFinished=${type}&idUser=${id}&_order=asc`)
+  }
+
+  getTodayTasks(id:number, date : string): Observable<Tasks[]>{
+    console.log(date)
+     return this.http.get<Tasks[]>(`https://backend-mytasks.herokuapp.com/tasks?data_like=${date}&idUser=${id}`)
+  }
 }

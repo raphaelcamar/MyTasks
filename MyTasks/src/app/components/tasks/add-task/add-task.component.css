@@ -1,3 +1,9 @@
+.dialog {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .container{
     width: 100%;
     margin : 0 auto;
@@ -44,7 +50,7 @@ h1{
 
 button{
     margin-top: 2rem;
-    width: 100%;
+    width: 35%;
     padding: 1rem;
     background-color: #2680EB;
     color: #ffffff;
@@ -53,9 +59,20 @@ button{
     cursor: pointer;
     outline: none;
 }
-
 button:hover{
     background-color: #2571cf;;
+}
+/* .create{
+    background-color: #33C58B;
+}
+.create:hover{
+    background-color: #2eb680;
+} */
+.close{
+    background-color: #686868;
+}
+.close:hover{
+    background-color: #5a5a5a;
 }
 button:active{
     transform: scale(0.9);

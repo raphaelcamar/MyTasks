@@ -1,26 +1,23 @@
 <div class="container">
-    <div class="wrapper-chart">
-        <div class="chart">
-            <canvas baseChart
-              [data]="pieChartData"
-              [labels]="pieChartLabels"
-              [chartType]="pieChartType"
-              [options]="pieChartOptions"
-              [colors]="pieChartColors"
-              [legend]="pieChartLegend">
-            </canvas>
+  <app-card></app-card>
+  <div class="wrapper-container">
+      <div class="card">
+        <div class="wrapper">
+          <div class="title">Últimas Finalizadas</div>
+          <div class="wrapper-elements" *ngFor="let task of tasks">
+            <div class="icon-texts">
+              <mat-icon class="finished icon">{{task.isFinished | icon}}</mat-icon>
+              <div class="texts">
+                <div class="name">{{task.name}}</div>
+              <div class="description">{{task.description | truncate : 17}}</div>
+              </div>
+            </div>
+            <div class="options">
+              <button mat-icon-button class="edit" (click)="update(task)"><mat-icon>create</mat-icon></button>
+              <button mat-icon-button class="warn" (click)="delete(task)"><mat-icon>delete</mat-icon></button>
+            </div>
           </div>
-    </div>
-
-    <div class="wrapper-chart column">
-        <div class="chart">
-            <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [chartType]="barChartType">
-            </canvas>
-          </div>
-    </div>
+        </div>
+      </div>
+  </div>
 </div>
