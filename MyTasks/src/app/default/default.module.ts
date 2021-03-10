@@ -19,6 +19,8 @@ import {MatSortModule} from '@angular/material/sort';
 import { TruncatePipe } from '../pipes/truncate.pipe';
 import { DashboardsComponent } from '../components/user/dashboards/dashboards.component';
 import { IconPipe } from '../pipes/icon.pipe';
+import { ScrollCardComponent } from '../components/scroll-card/scroll-card.component';
+// import { ScrollCardComponent } from '';
 // import { ButtonComponent } from '../components/button/button.component';
 
 
@@ -33,6 +35,7 @@ import { IconPipe } from '../pipes/icon.pipe';
     DashboardsComponent,
     TruncatePipe,
     IconPipe,
+    ScrollCardComponent
   ],
   imports: [
     CommonModule,

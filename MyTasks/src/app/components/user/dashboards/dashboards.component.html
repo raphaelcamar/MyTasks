@@ -1,14 +1,15 @@
 <div class="container">
   <app-card></app-card>
   <div class="wrapper-container">
+
       <div class="card">
         <div class="wrapper">
-          <div class="title">Últimas Finalizadas</div>
-          <div class="wrapper-elements" *ngFor="let task of tasks">
+          <div class="title">Últimas Cadastradas</div>
+          <div class="wrapper-elements" *ngFor="let task of lastTasks">
             <div class="icon-texts">
-              <mat-icon class="finished icon">{{task.isFinished | icon}}</mat-icon>
+              <mat-icon class="icon" [ngClass]="task.isFinished">{{task.isFinished | icon}}</mat-icon>
               <div class="texts">
-                <div class="name">{{task.name}}</div>
+                <div class="name">{{task.name | truncate : 20}}</div>
               <div class="description">{{task.description | truncate : 17}}</div>
               </div>
             </div>
@@ -19,5 +20,76 @@
           </div>
         </div>
       </div>
+
+    <div class="card">
+      <div class="wrapper">
+        <div class="title">Últimas Finalizadas</div>
+        <div class="wrapper-elements" *ngFor="let task of finishedTasks">
+          <div class="icon-texts">
+            <mat-icon class="finished icon">{{task.isFinished | icon}}</mat-icon>
+            <div class="texts">
+              <div class="name">{{task.name | truncate : 20}}</div>
+            <div class="description">{{task.description | truncate : 17}}</div>
+            </div>
+          </div>
+          <div class="options">
+            <button mat-icon-button class="edit" (click)="update(task)"><mat-icon>create</mat-icon></button>
+            <button mat-icon-button class="warn" (click)="delete(task)"><mat-icon>delete</mat-icon></button>
+          </div>
+        </div>
+      </div>
+</div>
+
+  <div class="card small">
+    <div class="wrapper">
+      <div class="title">Porcentagem</div>
+        <div class="compare">
+          <div class="left">
+            <mat-icon class="circle finished">fiber_manual_record</mat-icon>
+            <div class="name">Finalizadas</div>
+          </div>
+          <div class="porc">{{finalizadasPorc}}</div>
+        </div>
+        <div class="bottom-bar finalizado-circle">
+          <div class="bar finalizado-bar" style="width: {{finalizadasPorc}};"></div>
+        </div>
+
+        <div class="compare">
+          <div class="left">
+            <mat-icon class="circle processo">fiber_manual_record</mat-icon>
+            <div class="name">Em andamento</div>
+          </div>
+          <div class="porc">{{andamentoPorc}}</div>
+        </div>
+        <div class="bottom-bar processo-circle">
+          <div class="bar processo-bar" style="width: {{andamentoPorc}};"></div>
+        </div>
+
+        <div class="compare">
+          <div class="left">
+            <mat-icon class="circle Cancelado">fiber_manual_record</mat-icon>
+            <div class="name">Canceladas</div>
+          </div>
+          <div class="porc">{{canceladoPorc}}</div>
+        </div>
+        <div class="bottom-bar cancelado-circle">
+          <div class="bar cancelado-bar"  style="width: {{canceladoPorc}}"></div>
+        </div>
+
+        <div class="compare">
+          <div class="left">
+            <mat-icon class="circle iniciado">fiber_manual_record</mat-icon>
+            <div class="name">Não iniciadas</div>
+          </div>
+          <div class="porc">{{naoIniciadoPorc}}</div>
+        </div>
+        <div class="bottom-bar iniciado-circle">
+          <div class="bar iniciado-bar" style="width: {{naoIniciadoPorc}};"></div>
+        </div>
+
+
+    </div>
   </div>
+
+</div>
 </div>

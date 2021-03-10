@@ -42,6 +42,7 @@ import { DefaultModule } from './default/default.module';
 import { ProfileComponent } from './components/user/profile/profile.component';
 // import { DashboardsComponent } from './components/user/dashboards/dashboards.component';
 import { ButtonComponent } from './components/button/button.component';
+
 // import { TruncatePipe } from './pipes/truncate.pipe';
 // import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { DashboardComponent } from './modules/dashboard/dashboard.component';

@@ -4,6 +4,7 @@ import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { Tasks } from 'src/app/models/tasks.model';
 import { User } from 'src/app/models/user.model';
+import { IconPipe } from 'src/app/pipes/icon.pipe';
 import { TasksService } from 'src/app/services/tasks/tasks.service';
 import { changeDate } from 'src/helpers/changeDate';
 import { CardService } from '../../card/card.service';
@@ -13,14 +14,21 @@ import { UpdateComponent } from '../../tasks/update/update.component';
 @Component({
   selector: 'app-dashboards',
   templateUrl: './dashboards.component.html',
-  styleUrls: ['./dashboards.component.css']
+  styleUrls: ['./dashboards.component.css'],
 })
 export class DashboardsComponent implements OnInit {
 
   user : User;
-  tasks : Tasks[];
+  finishedTasks : Tasks[];
   todayTasks : Tasks[];
+  lastTasks : Tasks[];
   date : Date;
+  tasks : Tasks[];
+
+  finalizadasPorc : string
+  naoIniciadoPorc : string
+  canceladoPorc : string
+  andamentoPorc : string
 
   constructor(private taskService : TasksService, private dialog : MatDialog, private cardService : CardService) { }
 
@@ -28,24 +36,62 @@ export class DashboardsComponent implements OnInit {
 
     this.user = sessionStorage.getItem('logged') == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
 
+    this.loadFinishedTasks();
+    this.loadTasks();
+    this.loadLastTasks();
+    // this.porc();
+
+    // const formatted = changeDate.getDate();
+
+  }
+
+  loadFinishedTasks(){
+
     this.taskService.getIsFinished(this.user.id, 'Finalizado').subscribe(result =>{
       result.reverse();
-      this.tasks = result.slice(0, 10);
+      
+      this.finishedTasks = result.slice(0, 10);
 
     });
+  }
 
-    const formatted = changeDate.getDate();
-
-    this.taskService.getTodayTasks(this.user.id, formatted).subscribe(result =>{
-      this.todayTasks = result;
-    });
-
-    this.loadTasks();
+  porc(){
+    const length = this.tasks.length;
+    let cont : number = 0
+    let cont1 : number = 0
+    let cont2 : number = 0
+    let cont3 : number = 0
+    console.log(this.tasks);
+    this.tasks.filter(item => item.isFinished == 'Finalizado' ? cont += 1 : '')
+    this.tasks.filter(item => item.isFinished == 'Não iniciado' ? cont1 += 1 : '')
+    this.tasks.filter(item => item.isFinished == 'Cancelado' ? cont2 += 1 : '')
+    this.tasks.filter(item => item.isFinished == 'Em processo' ? cont3 += 1 : '')
+    cont = cont * 100 / length;
+    cont1 = cont1 * 100 / length;
+    cont2 = cont2 * 100 / length;
+    cont3 = cont3 * 100 / length;
+    this.finalizadasPorc = cont.toFixed(2).toString() + '%';
+    this.naoIniciadoPorc = cont1.toFixed(2).toString() + '%';
+    this.canceladoPorc = cont2.toFixed(2).toString() + '%';
+    this.andamentoPorc = cont3.toFixed(2).toString() + '%';
   }
 
   loadTasks(){
     this.taskService.read(this.user.id).subscribe(result =>{
-      this.cardService.cardData = result
+      this.tasks = result;
+      this.cardService.cardData = result;
+      this.porc();
+    })
+  }
+
+  calculate(item : Tasks){
+
+  }
+
+  loadLastTasks(){
+    this.taskService.read(this.user.id).subscribe(result =>{
+      result.reverse();
+      this.lastTasks = result.slice(0, 15);
     })
   }
 
@@ -54,8 +100,9 @@ export class DashboardsComponent implements OnInit {
       data : task
     });
 
-    dialogRef.afterOpened().subscribe(result =>{
+    dialogRef.afterClosed().subscribe(result =>{
       this.ngOnInit();
+      this.loadTasks();
     })
   }
 
@@ -64,8 +111,9 @@ export class DashboardsComponent implements OnInit {
     const dialogRef = this.dialog.open(DeleteComponent, {
        data : task
     });
-    dialogRef.afterOpened().subscribe(result =>{
+    dialogRef.afterClosed().subscribe(result =>{
       this.ngOnInit();
+      this.loadTasks();
     })
   }
 }
