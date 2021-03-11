@@ -1,0 +1,33 @@
+.table{
+  overflow: auto;
+  margin-top: 5%;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+
+  min-width: 1200px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.31);
+}
+th{
+  padding: 20px 15px;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.edit{
+  color: #33c58b;
+  border-radius: 50px;
+}
+.warn{
+  color: #EF4E59;
+}
+.edit:hover, .warn:hover{
+  background-color: rgb(236, 236, 236);
+}
+
+@media(max-width : 1200px){
+  table{
+      overflow: auto;
+  }
+}

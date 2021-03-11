@@ -28,14 +28,14 @@ export class InfosComponent implements OnInit {
   tasks : Tasks[];
   hide : boolean = true;
 
-  constructor(private taskService : TasksService, private tableService : TableService, private cardService : CardService) {}
+  constructor(private taskService : TasksService, private cardService : CardService, private tableService : TableService) {}
 
   ngOnInit(): void {
    this.user = sessionStorage.getItem('logged') == null ? JSON.parse(localStorage.getItem('logged')) : JSON.parse(sessionStorage.getItem('logged'));
    
-   this.taskService.read(this.user.id).subscribe(response =>{
-     this.tableService.TableData = response;
-    //  this.cardService.cardData = response
-   });
+    this.taskService.read(this.user.id).subscribe(response =>{
+      this.tableService.TableData = response;
+      //  this.cardService.cardData = response
+    });
   }
 }

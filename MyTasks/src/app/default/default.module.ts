@@ -20,6 +20,8 @@ import { TruncatePipe } from '../pipes/truncate.pipe';
 import { DashboardsComponent } from '../components/user/dashboards/dashboards.component';
 import { IconPipe } from '../pipes/icon.pipe';
 import { ScrollCardComponent } from '../components/scroll-card/scroll-card.component';
+import { DataTableComponent } from '../components/data-table/data-table.component';
+
 // import { ScrollCardComponent } from '';
 // import { ButtonComponent } from '../components/button/button.component';
 
@@ -35,7 +37,8 @@ import { ScrollCardComponent } from '../components/scroll-card/scroll-card.compo
     DashboardsComponent,
     TruncatePipe,
     IconPipe,
-    ScrollCardComponent
+    ScrollCardComponent,
+    DataTableComponent,
   ],
   imports: [
     CommonModule,

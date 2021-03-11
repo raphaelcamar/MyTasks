@@ -5,7 +5,5 @@ export interface TableData{
     data : Date;
     isFinished : string;
     importance : string;
-    edit ?: ()=>{}
-    delete ?: () =>{}
 
 }

@@ -42,6 +42,9 @@ import { DefaultModule } from './default/default.module';
 import { ProfileComponent } from './components/user/profile/profile.component';
 // import { DashboardsComponent } from './components/user/dashboards/dashboards.component';
 import { ButtonComponent } from './components/button/button.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 // import { TruncatePipe } from './pipes/truncate.pipe';
 // import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -61,6 +64,7 @@ import { ButtonComponent } from './components/button/button.component';
     ButtonAddTaskComponent,
     ProfileComponent,
     ButtonComponent,
+
     // TruncatePipe,
   ],
   imports: [
@@ -85,7 +89,9 @@ import { ButtonComponent } from './components/button/button.component';
     MatSortModule,
     ChartsModule,
     NgbModule,
-    DefaultModule
+    DefaultModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     // { provide : LOCALE_ID, useValue : 'pt-BR'},

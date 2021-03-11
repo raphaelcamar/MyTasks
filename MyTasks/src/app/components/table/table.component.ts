@@ -1,5 +1,8 @@
+import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Sort } from '@angular/material/sort';
+import { Tasks } from 'src/app/models/tasks.model';
 import { DeleteComponent } from '../tasks/delete/delete.component';
 import { UpdateComponent } from '../tasks/update/update.component';
 import { TableService } from './table.service';
@@ -12,12 +15,15 @@ import { TableService } from './table.service';
 export class TableComponent implements OnInit {
 
   dataSource : any[] = []
-  displayedColumns : string[]
+  displayedColumns = ['name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
+  sortedData: Tasks[];
 
-  constructor(private tableService : TableService, private dialog : MatDialog) { }
+  constructor(private tableService : TableService, private dialog : MatDialog) {
+
+    this.sortedData = this.dataSource.slice();
+   }
 
   ngOnInit(): void {
-    this.displayedColumns = ['name', 'description', 'data', 'isFinished', 'importance', 'edit', 'delete'];
     setTimeout(()=>{
       this.dataSource = this.tableService.TableData
     }, 1000)
@@ -40,6 +46,13 @@ export class TableComponent implements OnInit {
     const dialogRef = this.dialog.open(UpdateComponent, {
       data : task[0]
     });
-    // dialogRef.afterClosed().subscribe(result =>{})
+    dialogRef.afterClosed().subscribe(result =>{
+      this.dataSource = this.tableService.TableData
+    })
   }
+  
 }
+
+// function compare(a: number | string, b: number | string, isAsc: boolean) {
+//   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+// }
